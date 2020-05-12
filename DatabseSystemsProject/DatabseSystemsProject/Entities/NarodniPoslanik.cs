@@ -20,9 +20,11 @@ namespace DatabseSystemsProject.Entities
         public virtual string MestoStanovanja { get; set; }
         public virtual string AdresaStanovanja { get; set; }
 
+        public virtual IList<Telefon> Telefoni { get; set; }
+
         public NarodniPoslanik()
         {
-
+            Telefoni = new List<Telefon>();
         }
     }
 }

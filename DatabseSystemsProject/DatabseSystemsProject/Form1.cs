@@ -203,5 +203,110 @@ namespace DatabseSystemsProject
                 MessageBox.Show(exception.Message);
             }
         }
+
+        private void btnCreateTelefon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(31);
+
+                Telefon telefon = new Telefon()
+                {
+                    BrojTelefona = "+381 22222222"
+                };
+
+                telefon.NarodniPoslanik = narodniPoslanik;
+                session.Save(telefon);
+
+                session.Flush();
+                session.Close();
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnReadTelefoni_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(31);
+
+                foreach(Telefon telefon in narodniPoslanik.Telefoni)
+                {
+                    MessageBox.Show("Ime: " + narodniPoslanik.LicnoIme + ", broj telefona: " + telefon.BrojTelefona);
+                }
+
+                session.Close();
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnReadTelefon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Telefon telefon = session.Load<Telefon>(37);
+
+                MessageBox.Show("Broj telefona: " + telefon.BrojTelefona + " narodnog poslanika: " + telefon.NarodniPoslanik.LicnoIme);
+
+                session.Close();
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnUpdateTelefon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Telefon telefon = session.Load<Telefon>(37);
+
+                telefon.BrojTelefona = "+381 22222222";
+
+                session.Update(telefon);
+
+                session.Flush();
+                session.Close();
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            
+        }
+
+        private void btnDeleteTelefon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Telefon telefon = session.Load<Telefon>(37);
+
+                session.Delete(telefon);
+
+                session.Flush();
+                session.Close();
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
     }
 }

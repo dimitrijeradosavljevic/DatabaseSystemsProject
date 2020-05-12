@@ -26,6 +26,8 @@ namespace DatabseSystemsProject.Mappings
             Map(x => x.IzbornaLista, "IZBORNA_LISTA");
             Map(x => x.MestoStanovanja, "MESTO_STANOVANJA");
             Map(x => x.AdresaStanovanja, "ADRESA_STANOVANJA");
+
+            HasMany(x => x.Telefoni).KeyColumn("NARODNI_POSLANIK_ID").Cascade.All().Inverse();
         }
     }
 }

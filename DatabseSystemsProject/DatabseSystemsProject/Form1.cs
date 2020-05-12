@@ -107,5 +107,101 @@ namespace DatabseSystemsProject
                 MessageBox.Show(exception.Message);
             }
         }
+
+        private void btnCreateStalnoZaposlen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                StalnoZaposlen stalnoZaposlen = new StalnoZaposlen()
+                {
+                    Jib = 957683,
+                    Jmbg = 7485963214568,
+                    LicnoIme = "Kreiran kroz app",
+                    ImeRoditelja = "Mika",
+                    Prezime = "Mikic",
+                    DatumRodjenja = new DateTime(1980, 4, 23),
+                    MestoRodjenja = "Nis",
+                    IzbornaLista = "Lista A",
+                    MestoStanovanja = "Nis",
+                    AdresaStanovanja = "Kralja Milutina",
+                    Brk = 226475,
+                    RsGodine = 2,
+                    RsMeseci = 4,
+                    RsDani = 7,
+                    ImeFirme = "Strahinic Ban"
+                };
+
+                session.Save(stalnoZaposlen);
+
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnReadStalnoZaposlen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                IList<NarodniPoslanik> narodniPoslanici = session.QueryOver<NarodniPoslanik>()
+                                .Where(n => n.Id == 31)
+                                .List<NarodniPoslanik>();
+
+                StalnoZaposlen stalnoZaposlen = (StalnoZaposlen)narodniPoslanici[0];
+
+                MessageBox.Show(stalnoZaposlen.LicnoIme + ", godine radnog staza: " + stalnoZaposlen.RsGodine);
+
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void cmdUpdateStalnoZaposlen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                StalnoZaposlen stalnoZaposlen = session.Load<StalnoZaposlen>(31);
+
+                stalnoZaposlen.RsGodine= 6;
+
+                session.Update(stalnoZaposlen);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void cmdDeleteStalnoZaposlen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                StalnoZaposlen stalnoZaposlen = session.Load<StalnoZaposlen>(33);
+
+                session.Delete(stalnoZaposlen);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
     }
 }

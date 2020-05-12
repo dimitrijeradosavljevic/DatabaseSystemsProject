@@ -32,6 +32,10 @@
             this.btnUpdateNarodniPoslanik = new System.Windows.Forms.Button();
             this.btnCreateNarodniPoslanik = new System.Windows.Forms.Button();
             this.btnReadNarodniPoslanik = new System.Windows.Forms.Button();
+            this.cmdDeleteStalnoZaposlen = new System.Windows.Forms.Button();
+            this.cmdUpdateStalnoZaposlen = new System.Windows.Forms.Button();
+            this.btnReadStalnoZaposlen = new System.Windows.Forms.Button();
+            this.btnCreateStalnoZaposlen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDeleteNarodniPoslanik
@@ -74,11 +78,55 @@
             this.btnReadNarodniPoslanik.UseVisualStyleBackColor = true;
             this.btnReadNarodniPoslanik.Click += new System.EventHandler(this.btnReadNarodniPoslanik_Click);
             // 
+            // cmdDeleteStalnoZaposlen
+            // 
+            this.cmdDeleteStalnoZaposlen.Location = new System.Drawing.Point(258, 132);
+            this.cmdDeleteStalnoZaposlen.Name = "cmdDeleteStalnoZaposlen";
+            this.cmdDeleteStalnoZaposlen.Size = new System.Drawing.Size(240, 34);
+            this.cmdDeleteStalnoZaposlen.TabIndex = 14;
+            this.cmdDeleteStalnoZaposlen.Text = "Delete StalnoZaposlen";
+            this.cmdDeleteStalnoZaposlen.UseVisualStyleBackColor = true;
+            this.cmdDeleteStalnoZaposlen.Click += new System.EventHandler(this.cmdDeleteStalnoZaposlen_Click);
+            // 
+            // cmdUpdateStalnoZaposlen
+            // 
+            this.cmdUpdateStalnoZaposlen.Location = new System.Drawing.Point(258, 92);
+            this.cmdUpdateStalnoZaposlen.Name = "cmdUpdateStalnoZaposlen";
+            this.cmdUpdateStalnoZaposlen.Size = new System.Drawing.Size(240, 34);
+            this.cmdUpdateStalnoZaposlen.TabIndex = 13;
+            this.cmdUpdateStalnoZaposlen.Text = "Update StalnoZaposlen";
+            this.cmdUpdateStalnoZaposlen.UseVisualStyleBackColor = true;
+            this.cmdUpdateStalnoZaposlen.Click += new System.EventHandler(this.cmdUpdateStalnoZaposlen_Click);
+            // 
+            // btnReadStalnoZaposlen
+            // 
+            this.btnReadStalnoZaposlen.Location = new System.Drawing.Point(258, 52);
+            this.btnReadStalnoZaposlen.Name = "btnReadStalnoZaposlen";
+            this.btnReadStalnoZaposlen.Size = new System.Drawing.Size(240, 34);
+            this.btnReadStalnoZaposlen.TabIndex = 12;
+            this.btnReadStalnoZaposlen.Text = "Read StalnoZaposlen";
+            this.btnReadStalnoZaposlen.UseVisualStyleBackColor = true;
+            this.btnReadStalnoZaposlen.Click += new System.EventHandler(this.btnReadStalnoZaposlen_Click);
+            // 
+            // btnCreateStalnoZaposlen
+            // 
+            this.btnCreateStalnoZaposlen.Location = new System.Drawing.Point(258, 12);
+            this.btnCreateStalnoZaposlen.Name = "btnCreateStalnoZaposlen";
+            this.btnCreateStalnoZaposlen.Size = new System.Drawing.Size(240, 34);
+            this.btnCreateStalnoZaposlen.TabIndex = 11;
+            this.btnCreateStalnoZaposlen.Text = "Create StalnoZaposlen";
+            this.btnCreateStalnoZaposlen.UseVisualStyleBackColor = true;
+            this.btnCreateStalnoZaposlen.Click += new System.EventHandler(this.btnCreateStalnoZaposlen_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1368, 755);
+            this.Controls.Add(this.cmdDeleteStalnoZaposlen);
+            this.Controls.Add(this.cmdUpdateStalnoZaposlen);
+            this.Controls.Add(this.btnReadStalnoZaposlen);
+            this.Controls.Add(this.btnCreateStalnoZaposlen);
             this.Controls.Add(this.btnDeleteNarodniPoslanik);
             this.Controls.Add(this.btnUpdateNarodniPoslanik);
             this.Controls.Add(this.btnCreateNarodniPoslanik);
@@ -95,6 +143,10 @@
         private System.Windows.Forms.Button btnUpdateNarodniPoslanik;
         private System.Windows.Forms.Button btnCreateNarodniPoslanik;
         private System.Windows.Forms.Button btnReadNarodniPoslanik;
+        private System.Windows.Forms.Button cmdDeleteStalnoZaposlen;
+        private System.Windows.Forms.Button cmdUpdateStalnoZaposlen;
+        private System.Windows.Forms.Button btnReadStalnoZaposlen;
+        private System.Windows.Forms.Button btnCreateStalnoZaposlen;
     }
 }
 

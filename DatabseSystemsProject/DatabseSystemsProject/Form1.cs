@@ -721,9 +721,54 @@ namespace DatabseSystemsProject
                 ISession session = DataLayer.GetSession();
 
 
-                session.Delete(p);
+                // session.Delete(p);
 
                 session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnReadSluzbeneProstorijePG_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                PoslanickaGrupa poslanickaGrupa = session.Load<PoslanickaGrupa>(34);
+
+                foreach (SluzbenaProstorija sluzbenaProstorija in poslanickaGrupa.SluzbeneProstorije)
+                {
+                    MessageBox.Show("Naziv: " + poslanickaGrupa.Naziv
+                        + ", sluzbena prostorija (sprat, broj): ( " + sluzbenaProstorija.Sprat + ", " + sluzbenaProstorija.Broj + ")");
+                }
+
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnReadSluzbenaProstorijaRT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                RadnoTelo radnoTelo = session.Load<RadnoTelo>(37);
+
+                if (radnoTelo.SluzbeneProstorije.Count() > 0)
+                {
+                    MessageBox.Show("Tip radnog tela: " + radnoTelo.TipRadnogTela
+                        + ", sluzbena prostorija (sprat, broj): " +
+                        "( " + radnoTelo.SluzbeneProstorije[0].Sprat + ", " + radnoTelo.SluzbeneProstorije[0].Broj + ")");
+                }
+
                 session.Close();
             }
             catch (Exception exception)

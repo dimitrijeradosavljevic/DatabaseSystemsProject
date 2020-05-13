@@ -54,6 +54,8 @@
             this.btnReadJeZamenik = new System.Windows.Forms.Button();
             this.btnReadClanoviPG = new System.Windows.Forms.Button();
             this.btnReadClanoviRT = new System.Windows.Forms.Button();
+            this.btnReadSluzbeneProstorijePG = new System.Windows.Forms.Button();
+            this.btnReadSluzbenaProstorijaRT = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDeleteNarodniPoslanik
@@ -316,11 +318,33 @@
             this.btnReadClanoviRT.UseVisualStyleBackColor = true;
             this.btnReadClanoviRT.Click += new System.EventHandler(this.btnReadClanoviRT_Click);
             // 
+            // btnReadSluzbeneProstorijePG
+            // 
+            this.btnReadSluzbeneProstorijePG.Location = new System.Drawing.Point(671, 321);
+            this.btnReadSluzbeneProstorijePG.Name = "btnReadSluzbeneProstorijePG";
+            this.btnReadSluzbeneProstorijePG.Size = new System.Drawing.Size(186, 74);
+            this.btnReadSluzbeneProstorijePG.TabIndex = 35;
+            this.btnReadSluzbeneProstorijePG.Text = "Read SluzbeneProstorijePG";
+            this.btnReadSluzbeneProstorijePG.UseVisualStyleBackColor = true;
+            this.btnReadSluzbeneProstorijePG.Click += new System.EventHandler(this.btnReadSluzbeneProstorijePG_Click);
+            // 
+            // btnReadSluzbenaProstorijaRT
+            // 
+            this.btnReadSluzbenaProstorijaRT.Location = new System.Drawing.Point(863, 321);
+            this.btnReadSluzbenaProstorijaRT.Name = "btnReadSluzbenaProstorijaRT";
+            this.btnReadSluzbenaProstorijaRT.Size = new System.Drawing.Size(186, 74);
+            this.btnReadSluzbenaProstorijaRT.TabIndex = 36;
+            this.btnReadSluzbenaProstorijaRT.Text = "Read SluzbenaProstorijaRT";
+            this.btnReadSluzbenaProstorijaRT.UseVisualStyleBackColor = true;
+            this.btnReadSluzbenaProstorijaRT.Click += new System.EventHandler(this.btnReadSluzbenaProstorijaRT_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1454, 801);
+            this.ClientSize = new System.Drawing.Size(1437, 801);
+            this.Controls.Add(this.btnReadSluzbenaProstorijaRT);
+            this.Controls.Add(this.btnReadSluzbeneProstorijePG);
             this.Controls.Add(this.btnReadClanoviRT);
             this.Controls.Add(this.btnReadClanoviPG);
             this.Controls.Add(this.btnReadJeZamenik);
@@ -381,6 +405,8 @@
         private System.Windows.Forms.Button btnReadJeZamenik;
         private System.Windows.Forms.Button btnReadClanoviPG;
         private System.Windows.Forms.Button btnReadClanoviRT;
+        private System.Windows.Forms.Button btnReadSluzbeneProstorijePG;
+        private System.Windows.Forms.Button btnReadSluzbenaProstorijaRT;
     }
 }
 

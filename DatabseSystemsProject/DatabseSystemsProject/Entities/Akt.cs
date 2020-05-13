@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DatabseSystemsProject.Entities
 {
-    class Akt
+    public class Akt
     {
-        public int Id { get; set; }
-        public string TipAkta { get; set; }
-        public string TipPredlozioca { get; set; }
+        public virtual int Id { get; protected set; }
+        public virtual string TipAkta { get; set; }
+        public virtual string TipPredlozioca { get; set; }
     }
 
     public class AktNarodnihPoslanika

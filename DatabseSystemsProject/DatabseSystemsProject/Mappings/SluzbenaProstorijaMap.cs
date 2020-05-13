@@ -17,6 +17,12 @@ namespace DatabseSystemsProject.Mappings
             Id(x => x.Id, "ID").GeneratedBy.TriggerIdentity();
             Map(x => x.Sprat, "SPRAT");
             Map(x => x.Broj, "BROJ");
+
+            HasManyToMany(x => x.OrganizacioneJedinice)
+                .Table("JE_DODELJENA")
+                .ParentKeyColumn("SLUZBENA_PROSTORIJA_ID")
+                .ChildKeyColumn("ORGANIZACIONA_JEDINICA_ID")
+                .Cascade.All();
         }
     }
 }

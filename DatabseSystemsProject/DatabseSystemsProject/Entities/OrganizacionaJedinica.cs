@@ -18,9 +18,13 @@ namespace DatabseSystemsProject.Entities
 
         public virtual IList<NarodniPoslanik> Clanovi { get; set; }
 
+        public virtual IList<SluzbenaProstorija> SluzbeneProstorije { get; set; }
+
         public OrganizacionaJedinica()
         {
             Clanovi = new List<NarodniPoslanik>();
+
+            SluzbeneProstorije = new List<SluzbenaProstorija>();
         }
     }
 

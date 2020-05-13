@@ -29,6 +29,13 @@ namespace DatabseSystemsProject.Mappings
                 .ParentKeyColumn("ORGANIZACIONA_JEDINICA_ID")
                 .ChildKeyColumn("NARODNI_POSLANIK_ID")
                 .Cascade.All();
+
+            HasManyToMany(x => x.SluzbeneProstorije)
+                .Table("JE_DODELJENA")
+                .ParentKeyColumn("ORGANIZACIONA_JEDINICA_ID")
+                .ChildKeyColumn("SLUZBENA_PROSTORIJA_ID")
+                .Cascade.All()
+                .Inverse();
         }
     }
 

@@ -630,43 +630,100 @@ namespace DatabseSystemsProject
             }
         }
 
-        private void btnReadSluzbeneProstorijePG_Click(object sender, EventArgs e)
+        private void btnCreateSluzbenaProstorija_Click(object sender, EventArgs e)
         {
             try
             {
                 ISession session = DataLayer.GetSession();
 
-                PoslanickaGrupa poslanickaGrupa = session.Load<PoslanickaGrupa>(34);
+                SluzbenaProstorija p = new SluzbenaProstorija()
+                { 
+                    Broj = 4,
+                    Sprat = 1
+                };
 
-                foreach(SluzbenaProstorija sluzbenaProstorija in poslanickaGrupa.SluzbeneProstorije)
-                {
-                    MessageBox.Show("Naziv: " + poslanickaGrupa.Naziv 
-                        + ", sluzbena prostorija (sprat, broj): ( " + sluzbenaProstorija.Sprat + ", " + sluzbenaProstorija.Broj + ")");
-                }
+                session.Save(p);
 
+                session.Flush();
                 session.Close();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 this.ShowExceptionData(exception);
             }
         }
 
-        private void btnReadSluzbenaProstorijaRT_Click(object sender, EventArgs e)
+        private void btnReadSluzbenaProstorija_Click(object sender, EventArgs e)
         {
             try
             {
                 ISession session = DataLayer.GetSession();
 
-                RadnoTelo radnoTelo = session.Load<RadnoTelo>(37);
+                SluzbenaProstorija p = session.Load<SluzbenaProstorija>(33);
 
-                if(radnoTelo.SluzbeneProstorije.Count() > 0)
-                {
-                    MessageBox.Show("Tip radnog tela: " + radnoTelo.TipRadnogTela
-                        + ", sluzbena prostorija (sprat, broj): " +
-                        "( " + radnoTelo.SluzbeneProstorije[0].Sprat + ", " + radnoTelo.SluzbeneProstorije[0].Broj + ")");
-                }
+                MessageBox.Show("Sprat: " + p.Sprat + ", Soba: " + p.Broj);
 
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnUpdateSluzbenaProstorija_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                SluzbenaProstorija p = session.Load<SluzbenaProstorija>(33);
+
+                int brojSobe = 3;
+                MessageBox.Show("Novi broj sobe ubacen putem app je: " + brojSobe);
+
+                p.Broj = brojSobe;
+
+                session.Update(p);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnDeleteSluzbenaProstorija_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                SluzbenaProstorija p = session.Load<SluzbenaProstorija>(33);
+
+                session.Delete(p);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnCreateAkt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+
+                session.Delete(p);
+
+                session.Flush();
                 session.Close();
             }
             catch (Exception exception)

@@ -630,5 +630,107 @@ namespace DatabseSystemsProject
                 this.ShowExceptionData(exception);
             }
         }
+
+        private void btnCreateSluzbenaProstorija_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                SluzbenaProstorija p = new SluzbenaProstorija()
+                { 
+                    Broj = 4,
+                    Sprat = 1
+                };
+
+                session.Save(p);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnReadSluzbenaProstorija_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                SluzbenaProstorija p = session.Load<SluzbenaProstorija>(33);
+
+                MessageBox.Show("Sprat: " + p.Sprat + ", Soba: " + p.Broj);
+
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnUpdateSluzbenaProstorija_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                SluzbenaProstorija p = session.Load<SluzbenaProstorija>(33);
+
+                int brojSobe = 3;
+                MessageBox.Show("Novi broj sobe ubacen putem app je: " + brojSobe);
+
+                p.Broj = brojSobe;
+
+                session.Update(p);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnDeleteSluzbenaProstorija_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                SluzbenaProstorija p = session.Load<SluzbenaProstorija>(33);
+
+                session.Delete(p);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnCreateAkt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+
+                session.Delete(p);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
     }
 }

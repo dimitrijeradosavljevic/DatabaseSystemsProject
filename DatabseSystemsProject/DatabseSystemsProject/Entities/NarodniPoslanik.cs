@@ -22,9 +22,19 @@ namespace DatabseSystemsProject.Entities
 
         public virtual IList<Telefon> Telefoni { get; set; }
 
+        public virtual IList<OrganizacionaJedinica> JePredsednik { get; set; }
+        public virtual IList<OrganizacionaJedinica> JeZamenik { get; set; }
+
+        public virtual IList<OrganizacionaJedinica> OrganizacioneJedinice { get; set; }
+        
         public NarodniPoslanik()
         {
             Telefoni = new List<Telefon>();
+
+            JePredsednik = new List<OrganizacionaJedinica>();
+            JeZamenik = new List<OrganizacionaJedinica>();
+
+            OrganizacioneJedinice = new List<OrganizacionaJedinica>();
         }
     }
 }

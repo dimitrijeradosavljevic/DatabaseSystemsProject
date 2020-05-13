@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="DataLayer.cs" />
     <Compile Include="Entities\NarodniPoslanik.cs" />
+    <Compile Include="Entities\OrganizacionaJedinica.cs" />
     <Compile Include="Entities\StalnoZaposlen.cs" />
     <Compile Include="Entities\Telefon.cs" />
     <Compile Include="Form1.cs">
@@ -81,6 +82,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Mappings\NarodniPoslanikMap.cs" />
+    <Compile Include="Mappings\OrganizacionaJedinicaMap.cs" />
     <Compile Include="Mappings\StalnoZaposlenMap.cs" />
     <Compile Include="Mappings\TelefonMap.cs" />
     <Compile Include="Program.cs" />

@@ -28,6 +28,15 @@ namespace DatabseSystemsProject.Mappings
             Map(x => x.AdresaStanovanja, "ADRESA_STANOVANJA");
 
             HasMany(x => x.Telefoni).KeyColumn("NARODNI_POSLANIK_ID").Cascade.All().Inverse();
+            HasMany(x => x.JePredsednik).KeyColumn("PREDSEDNIK_ID").Cascade.All().Inverse();
+            HasMany(x => x.JeZamenik).KeyColumn("ZAMENIK_ID").Cascade.All().Inverse();
+
+            HasManyToMany(x => x.OrganizacioneJedinice)
+                .Table("JE_CLAN")
+                .ParentKeyColumn("NARODNI_POSLANIK_ID")
+                .ChildKeyColumn("ORGANIZACIONA_JEDINICA_ID")
+                .Cascade.All()
+                .Inverse();
         }
     }
 }

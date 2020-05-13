@@ -19,6 +19,14 @@ namespace DatabseSystemsProject
             InitializeComponent();
         }
 
+        private void ShowExceptionData(Exception exception)
+        {
+            MessageBox.Show(
+                "Exception message: " + exception.Message +
+                "\nInner exception: " + exception.InnerException
+            );
+        }
+
         private void btnCreateNarodniPoslanik_Click(object sender, EventArgs e)
         {
             try
@@ -306,6 +314,320 @@ namespace DatabseSystemsProject
             catch(Exception exception)
             {
                 MessageBox.Show(exception.Message);
+            }
+        }
+
+        // -------------------- Check methods below ----------------------------------
+        private void btnCreatePoslanickaGrupa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                NarodniPoslanik predsednik = session.Load<NarodniPoslanik>(56);
+                NarodniPoslanik zamenik = session.Load<NarodniPoslanik>(57);
+
+                PoslanickaGrupa poslanickaGrupa = new PoslanickaGrupa()
+                {
+                    Naziv = "Grupa Console"
+                };
+
+                poslanickaGrupa.Predsednik = predsednik;
+                poslanickaGrupa.Zamenik = zamenik;
+
+                session.Save(poslanickaGrupa);
+
+                session.Flush();
+                session.Close();
+            }
+            catch(Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnReadPoslanickaGrupa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                
+                IList<OrganizacionaJedinica> organizacioneJedinice = session.QueryOver<OrganizacionaJedinica>()
+                              .Where(n => n.Id == 31)
+                              .List<OrganizacionaJedinica>();
+
+                PoslanickaGrupa poslanickaGrupa = (PoslanickaGrupa)organizacioneJedinice[0];
+
+                MessageBox.Show(poslanickaGrupa.Naziv 
+                                + ", predsednik: " + poslanickaGrupa.Predsednik.LicnoIme
+                                + ", zamenik: " + poslanickaGrupa.Zamenik.LicnoIme);
+
+                session.Close();
+            }
+            catch(Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnUpdatePoslanickaGrupa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                PoslanickaGrupa poslanickaGrupa = session.Load<PoslanickaGrupa>(31);
+
+                poslanickaGrupa.Naziv = "Promenjen iz app";
+
+                session.Update(poslanickaGrupa);
+
+                session.Flush();
+                session.Close();
+            }
+            catch(Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnDeletePoslanickaGrupa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                PoslanickaGrupa poslanickaGrupa = session.Load<PoslanickaGrupa>(31);
+
+                session.Delete(poslanickaGrupa);
+
+                session.Flush();
+                session.Close();
+            }
+            catch(Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnCreateRadnoTelo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                NarodniPoslanik predsednik = session.Load<NarodniPoslanik>(56);
+                NarodniPoslanik zamenik = session.Load<NarodniPoslanik>(57);
+
+                RadnoTelo radnoTelo = new RadnoTelo()
+                {
+                    TipRadnogTela = "komisija"
+                };
+
+                radnoTelo.Predsednik = predsednik;
+                radnoTelo.Zamenik = zamenik;
+
+                session.Save(radnoTelo);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnReadRadnoTelo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                
+                RadnoTelo radnoTelo = session.Load<RadnoTelo>(35);
+                
+                MessageBox.Show("Tip radonog tela: " + radnoTelo.TipRadnogTela
+                                + ", predsednik: " + radnoTelo.Predsednik.LicnoIme
+                                + ", zamenik: " + radnoTelo.Zamenik.LicnoIme);
+
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnUpdateRadnoTelo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                RadnoTelo radnoTelo = session.Load<RadnoTelo>(35);
+
+                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(67);
+
+                radnoTelo.Predsednik = narodniPoslanik;
+                radnoTelo.Zamenik = narodniPoslanik;
+
+                session.Update(radnoTelo);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnDeleteRadnoTelo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                RadnoTelo radnoTelo = session.Load<RadnoTelo>(39);
+
+                session.Delete(radnoTelo);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnReadJeClan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(31);
+
+                foreach(OrganizacionaJedinica organizacionaJedinica in narodniPoslanik.OrganizacioneJedinice)
+                {
+                    if (organizacionaJedinica.GetType() == typeof(PoslanickaGrupa))
+                    {
+                        PoslanickaGrupa poslanickaGrupa = (PoslanickaGrupa)organizacionaJedinica;
+                        MessageBox.Show("Narodni poslanik " + narodniPoslanik.LicnoIme + ", je clan: " + poslanickaGrupa.Naziv);
+                    }
+                    else
+                    {
+                        RadnoTelo radnoTelo = (RadnoTelo)organizacionaJedinica;
+                        MessageBox.Show("Narodni poslanik " + narodniPoslanik.LicnoIme + ", je clan: " + radnoTelo.TipRadnogTela);
+                    }
+                }
+            }
+            catch(Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnReadJePredsednik_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(55);
+
+                foreach(OrganizacionaJedinica organizacionaJedinica in narodniPoslanik.JePredsednik)
+                {
+                    if(organizacionaJedinica.GetType() == typeof(PoslanickaGrupa))
+                    {
+                        PoslanickaGrupa poslanickaGrupa = (PoslanickaGrupa)organizacionaJedinica;
+                        MessageBox.Show("Narodni poslanik " + narodniPoslanik.LicnoIme + ", je predsednik: " + poslanickaGrupa.Naziv);
+                    }
+                    else
+                    {
+                        RadnoTelo radnoTelo = (RadnoTelo)organizacionaJedinica;
+                        MessageBox.Show("Narodni poslanik " + narodniPoslanik.LicnoIme + ", je predsednik: " + radnoTelo.TipRadnogTela);
+                    }
+                }
+
+                session.Close();
+            }
+            catch(Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnReadJeZamenik_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(64);
+
+                foreach (OrganizacionaJedinica organizacionaJedinica in narodniPoslanik.JeZamenik)
+                {
+                    if (organizacionaJedinica.GetType() == typeof(PoslanickaGrupa))
+                    {
+                        PoslanickaGrupa poslanickaGrupa = (PoslanickaGrupa)organizacionaJedinica;
+                        MessageBox.Show("Narodni poslanik " + narodniPoslanik.LicnoIme + ", je zamenik: " + poslanickaGrupa.Naziv);
+                    }
+                    else
+                    {
+                        RadnoTelo radnoTelo = (RadnoTelo)organizacionaJedinica;
+                        MessageBox.Show("Narodni poslanik " + narodniPoslanik.LicnoIme + ", je zamenik: " + radnoTelo.TipRadnogTela);
+                    }
+                }
+
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnReadClanoviPG_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                PoslanickaGrupa poslanickaGrupa = session.Load<PoslanickaGrupa>(31);
+
+                foreach(NarodniPoslanik clan in poslanickaGrupa.Clanovi)
+                {
+                    MessageBox.Show("Narodni poslanik " + clan.LicnoIme + ", je clan: " + poslanickaGrupa.Naziv);
+                }
+
+                session.Close();
+            }
+            catch(Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnReadClanoviRT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                RadnoTelo radnoTelo = session.Load<RadnoTelo>(35);
+
+                foreach (NarodniPoslanik clan in radnoTelo.Clanovi)
+                {
+                    MessageBox.Show("Narodni poslanik " + clan.LicnoIme + ", je clan: " + radnoTelo.TipRadnogTela);
+                }
+
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
             }
         }
     }

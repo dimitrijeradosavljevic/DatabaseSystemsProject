@@ -720,8 +720,40 @@ namespace DatabseSystemsProject
             {
                 ISession session = DataLayer.GetSession();
 
+                AktVlade avl = new AktVlade()
+                { 
+                   TipAkta = "odluka"
+                };
 
-                // session.Delete(p);
+                AktViseOd1500Biraca abir = new AktViseOd1500Biraca()
+                {
+                    TipAkta = "tumacenje",
+                    BrojBiraca = 2000
+                };
+
+                AktNarodnihPoslanika anp = new AktNarodnihPoslanika()
+                {
+                    TipAkta = "zakon"
+                };
+
+                int id = 31;
+                
+                // dodajemo predlagace Akta
+
+                while(id< 62)
+                {
+                    NarodniPoslanik p = session.Load<NarodniPoslanik>(id);
+
+                    p.PredlozeniAkti.Add(anp);
+                    anp.Predlagaci.Add(p);
+
+                    id++;
+                }
+
+
+                session.Save(anp);
+                session.Save(avl);
+                session.Save(abir);
 
                 session.Flush();
                 session.Close();
@@ -776,5 +808,130 @@ namespace DatabseSystemsProject
                 this.ShowExceptionData(exception);
             }
         }
+
+        private void btnReadZauzeteProstorije_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReadAkt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                AktVlade akt = session.Load<AktVlade>(32);
+
+                MessageBox.Show(akt.Id + ", " + akt.TipAkta + ", " + akt.TipPredlozioca);
+
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnUpdateAkt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                AktViseOd1500Biraca akt = session.Load<AktViseOd1500Biraca>(32);
+
+                MessageBox.Show(" Novi broj biraca je 2020");
+
+                akt.BrojBiraca = 2020;
+
+                session.Update(akt);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnReadAllAkt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                IList<Akt> akti = (from a in session.Query<Akt>() select a).ToList<Akt>();
+
+                string tekst = "";
+
+                foreach(var akt in akti)
+                {
+                    if (akt.GetType() == typeof(AktViseOd1500Biraca))
+                    {
+                        AktViseOd1500Biraca abir = (AktViseOd1500Biraca)akt;
+                        tekst += abir.Id + ", " + abir.TipAkta + ", " + abir.TipPredlozioca + ", " + abir.BrojBiraca + "\n";
+                    }
+                    else
+                    {
+                        tekst += akt.Id + ", " + akt.TipAkta + ", " + akt.TipPredlozioca + "\n";
+                    }
+                }
+
+                MessageBox.Show(tekst);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnDeleteAkt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                AktVlade akt = session.Load<AktVlade>(31);
+
+                session.Delete(akt);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+        private void btnReadPredlagaci_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                AktNarodnihPoslanika akt = session.Load<AktNarodnihPoslanika>(39);
+
+                string tekst = "";
+
+                foreach (var poslanik in akt.Predlagaci)
+                {
+                    tekst += poslanik.Id + ", " + poslanik.LicnoIme + ", " + poslanik.Prezime + " \n";
+                }
+
+                MessageBox.Show(tekst);
+                    
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                this.ShowExceptionData(exception);
+            }
+        }
+
+
     }
 }

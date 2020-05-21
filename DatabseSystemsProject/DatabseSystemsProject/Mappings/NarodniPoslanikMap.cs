@@ -37,6 +37,12 @@ namespace DatabseSystemsProject.Mappings
                 .ChildKeyColumn("ORGANIZACIONA_JEDINICA_ID")
                 .Cascade.All()
                 .Inverse();
+
+            HasManyToMany(x => x.SazvaneSednice)
+                .Table("JE_SAZVALO")
+                .ParentKeyColumn("NARODNI_POSLANIK_ID")
+                .ChildKeyColumn("SEDNICA_ID")
+                .Cascade.All();
         }
     }
 }

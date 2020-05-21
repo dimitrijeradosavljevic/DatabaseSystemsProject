@@ -18,7 +18,7 @@ namespace DatabseSystemsProject.Mappings
 
             Id(x => x.Id, "ID").GeneratedBy.TriggerIdentity();
 
-            Map(x => x.TipAkta, "TIP_AKTA");
+            Map(x => x.TipAkta, "TIP");
         }
     }
 

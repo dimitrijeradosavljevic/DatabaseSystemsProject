@@ -12,7 +12,9 @@ namespace DatabseSystemsProject.Mappings
     {
         public SednicaMap()
         {
-            DiscriminateSubClassesOnColumn("TIP_SEDNICE");
+            Table("Sednica");
+
+            DiscriminateSubClassesOnColumn("TIP");
 
             Id(x => x.Id, "ID").GeneratedBy.TriggerIdentity();
 

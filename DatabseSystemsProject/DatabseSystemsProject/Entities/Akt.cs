@@ -15,12 +15,12 @@ namespace DatabseSystemsProject.Entities
 
     public class AktNarodnihPoslanika : Akt
     {
-        public IList<NarodniPoslanik> Predlagaci { get; set; }
+        public virtual IList<NarodniPoslanik> Predlagaci { get; set; }
     }
 
     public class AktViseOd1500Biraca : Akt
     {
-        public int BrojBiraca { get; set; }
+        public virtual int BrojBiraca { get; set; }
     }
 
     public class AktVlade : Akt

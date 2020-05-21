@@ -594,7 +594,7 @@ namespace DatabseSystemsProject
             {
                 ISession session = DataLayer.GetSession();
 
-                PoslanickaGrupa poslanickaGrupa = session.Load<PoslanickaGrupa>(31);
+                PoslanickaGrupa poslanickaGrupa = session.Load<PoslanickaGrupa>(34);
 
                 foreach(NarodniPoslanik clan in poslanickaGrupa.Clanovi)
                 {
@@ -932,6 +932,46 @@ namespace DatabseSystemsProject
             }
         }
 
+        private void btnReadSazvaneSednice_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
 
+                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(40);
+
+                foreach(Sednica sednica in narodniPoslanik.SazvaneSednice)
+                {
+                    MessageBox.Show("Ime: " + narodniPoslanik.LicnoIme + ", broj saziva sednice" + sednica.BrojSaziva);
+                }
+
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnReadPredlozeniAkti_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(40);
+
+                foreach (Akt akt in narodniPoslanik.PredlozeniAkti)
+                {
+                    MessageBox.Show("Ime: " + narodniPoslanik.LicnoIme + ", akt: " + akt.TipAkta + ", " + akt.TipPredlozioca);
+                }
+
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
     }
 }

@@ -680,14 +680,15 @@ namespace DatabseSystemsProject
                 SluzbenaProstorija p = session.Load<SluzbenaProstorija>(33);
 
                 int brojSobe = 3;
-                MessageBox.Show("Novi broj sobe ubacen putem app je: " + brojSobe);
-
+                
                 p.Broj = brojSobe;
 
                 session.Update(p);
 
                 session.Flush();
                 session.Close();
+
+                MessageBox.Show("Novi broj sobe ubacen putem app je: " + brojSobe);
             }
             catch (Exception exception)
             {

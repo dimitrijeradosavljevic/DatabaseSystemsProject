@@ -12,9 +12,9 @@ namespace DatabseSystemsProject.Mappings
     {
         public SednicaMap()
         {
-            Table("SEDNICA");
+            Table("Sednica");
 
-            DiscriminateSubClassesOnColumn("TIP_SEDNICE");
+            DiscriminateSubClassesOnColumn("TIP");
 
             Id(x => x.Id, "ID").GeneratedBy.TriggerIdentity();
 
@@ -22,6 +22,8 @@ namespace DatabseSystemsProject.Mappings
             Map(x => x.BrojZasedanja, "BROJ_ZASEDANJA");
             Map(x => x.DatumPocetka, "DATUM_POCETKA");
             Map(x => x.DatumZavrsetka, "DATUM_ZAVRSETKA");
+
+            HasMany(x => x.RadniDani).KeyColumn("SEDNICA_ID").LazyLoad().Cascade.All().Inverse();
         }       
     }
 
@@ -40,7 +42,7 @@ namespace DatabseSystemsProject.Mappings
             DiscriminatorValue("vanredna");
             Map(x => x.TipVanredneSednice, "TIP_VANREDNE_SEDNICE");
 
-            HasManyToMany(x => x.Sazivaci)
+            HasManyToMany(x => x.Sazivaoci)
                 .Table("JE_SAZVALO")
                 .ParentKeyColumn("SEDNICA_ID")
                 .ChildKeyColumn("NARODNI_POSLANIK_ID")

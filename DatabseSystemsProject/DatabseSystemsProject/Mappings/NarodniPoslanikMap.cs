@@ -43,6 +43,12 @@ namespace DatabseSystemsProject.Mappings
                 .ParentKeyColumn("NARODNI_POSLANIK_ID")
                 .ChildKeyColumn("SEDNICA_ID")
                 .Cascade.All();
+
+            HasManyToMany(x => x.PredlozeniAkti)
+              .Table("JE_PREDLOZIO")
+              .ParentKeyColumn("NARODNI_POSLANIK_ID")
+              .ChildKeyColumn("AKT_ID")
+              .Cascade.All();
         }
     }
 }

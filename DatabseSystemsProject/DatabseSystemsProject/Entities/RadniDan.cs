@@ -12,7 +12,7 @@ namespace DatabseSystemsProject.Entities
         public virtual DateTime DatumIVremePocetka { get; set; }
         public virtual DateTime DatumIVremeZavrsetka { get; set; }
         public virtual int BrojPrisutnihPoslanika { get; set; }
-        public Sednica Sednica { get; set; }
+        public virtual Sednica Sednica { get; set; }
 
         public RadniDan()
         {

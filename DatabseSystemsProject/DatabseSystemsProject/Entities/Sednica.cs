@@ -15,9 +15,11 @@ namespace DatabseSystemsProject.Entities
         public virtual DateTime DatumZavrsetka { get; set; }
         public virtual string TipSednice { get; set; }
 
+        public virtual IList<RadniDan> RadniDani { get; set; }
+
         public Sednica()
         {
-
+            RadniDani = new List<RadniDan>();
         }
     }
 
@@ -29,12 +31,11 @@ namespace DatabseSystemsProject.Entities
     public class VanrednaSednica : Sednica
     {
         public virtual string TipVanredneSednice { get; set; }
-        public virtual IList<NarodniPoslanik> Sazivaci { get; set; }
-
+        public virtual IList<NarodniPoslanik> Sazivaoci { get; set; }
+       
         public VanrednaSednica() : base()
         {
-            IList<NarodniPoslanik> Poslanici = new List<NarodniPoslanik>();
-   
+            Sazivaoci = new List<NarodniPoslanik>();
         }
     }
 }

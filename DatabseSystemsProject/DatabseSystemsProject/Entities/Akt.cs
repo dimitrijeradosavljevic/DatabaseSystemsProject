@@ -11,19 +11,38 @@ namespace DatabseSystemsProject.Entities
         public virtual int Id { get; protected set; }
         public virtual string TipAkta { get; set; }
         public virtual string TipPredlozioca { get; set; }
+
+        public Akt()
+        {
+
+        }
     }
 
     public class AktNarodnihPoslanika : Akt
     {
-        public IList<NarodniPoslanik> Predlagaci { get; set; }
+        public virtual IList<NarodniPoslanik> Predlagaci { get; set; }
+
+        public AktNarodnihPoslanika() : base()
+        {
+            Predlagaci = new List<NarodniPoslanik>();
+        }
     }
 
     public class AktViseOd1500Biraca : Akt
     {
-        public int BrojBiraca { get; set; }
+        public virtual int BrojBiraca { get; set; }
+
+        public AktViseOd1500Biraca() : base()
+        {
+
+        }
     }
 
     public class AktVlade : Akt
     {
+        public AktVlade() : base()
+        {
+
+        }
     }
 }

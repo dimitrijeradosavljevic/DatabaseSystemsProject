@@ -180,7 +180,7 @@ namespace DatabseSystemsProject
 
                 StalnoZaposlen stalnoZaposlen = session.Load<StalnoZaposlen>(31);
 
-                stalnoZaposlen.RsGodine= 6;
+                stalnoZaposlen.RsGodine = 6;
 
                 session.Update(stalnoZaposlen);
 
@@ -231,7 +231,7 @@ namespace DatabseSystemsProject
                 session.Flush();
                 session.Close();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
@@ -245,14 +245,14 @@ namespace DatabseSystemsProject
 
                 NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(31);
 
-                foreach(Telefon telefon in narodniPoslanik.Telefoni)
+                foreach (Telefon telefon in narodniPoslanik.Telefoni)
                 {
                     MessageBox.Show("Ime: " + narodniPoslanik.LicnoIme + ", broj telefona: " + telefon.BrojTelefona);
                 }
 
                 session.Close();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
@@ -270,7 +270,7 @@ namespace DatabseSystemsProject
 
                 session.Close();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
@@ -291,11 +291,11 @@ namespace DatabseSystemsProject
                 session.Flush();
                 session.Close();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
-            
+
         }
 
         private void btnDeleteTelefon_Click(object sender, EventArgs e)
@@ -311,7 +311,7 @@ namespace DatabseSystemsProject
                 session.Flush();
                 session.Close();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
@@ -339,7 +339,7 @@ namespace DatabseSystemsProject
                 session.Flush();
                 session.Close();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 this.ShowExceptionData(exception);
             }
@@ -350,20 +350,20 @@ namespace DatabseSystemsProject
             try
             {
                 ISession session = DataLayer.GetSession();
-                
+
                 IList<OrganizacionaJedinica> organizacioneJedinice = session.QueryOver<OrganizacionaJedinica>()
                               .Where(n => n.Id == 31)
                               .List<OrganizacionaJedinica>();
 
                 PoslanickaGrupa poslanickaGrupa = (PoslanickaGrupa)organizacioneJedinice[0];
 
-                MessageBox.Show(poslanickaGrupa.Naziv 
+                MessageBox.Show(poslanickaGrupa.Naziv
                                 + ", predsednik: " + poslanickaGrupa.Predsednik.LicnoIme
                                 + ", zamenik: " + poslanickaGrupa.Zamenik.LicnoIme);
 
                 session.Close();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 this.ShowExceptionData(exception);
             }
@@ -384,7 +384,7 @@ namespace DatabseSystemsProject
                 session.Flush();
                 session.Close();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 this.ShowExceptionData(exception);
             }
@@ -403,7 +403,7 @@ namespace DatabseSystemsProject
                 session.Flush();
                 session.Close();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 this.ShowExceptionData(exception);
             }
@@ -442,9 +442,9 @@ namespace DatabseSystemsProject
             try
             {
                 ISession session = DataLayer.GetSession();
-                
+
                 RadnoTelo radnoTelo = session.Load<RadnoTelo>(35);
-                
+
                 MessageBox.Show("Tip radonog tela: " + radnoTelo.TipRadnogTela
                                 + ", predsednik: " + radnoTelo.Predsednik.LicnoIme
                                 + ", zamenik: " + radnoTelo.Zamenik.LicnoIme);
@@ -508,7 +508,7 @@ namespace DatabseSystemsProject
 
                 NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(31);
 
-                foreach(OrganizacionaJedinica organizacionaJedinica in narodniPoslanik.OrganizacioneJedinice)
+                foreach (OrganizacionaJedinica organizacionaJedinica in narodniPoslanik.OrganizacioneJedinice)
                 {
                     if (organizacionaJedinica.GetType() == typeof(PoslanickaGrupa))
                     {
@@ -522,7 +522,7 @@ namespace DatabseSystemsProject
                     }
                 }
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 this.ShowExceptionData(exception);
             }
@@ -536,9 +536,9 @@ namespace DatabseSystemsProject
 
                 NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(55);
 
-                foreach(OrganizacionaJedinica organizacionaJedinica in narodniPoslanik.JePredsednik)
+                foreach (OrganizacionaJedinica organizacionaJedinica in narodniPoslanik.JePredsednik)
                 {
-                    if(organizacionaJedinica.GetType() == typeof(PoslanickaGrupa))
+                    if (organizacionaJedinica.GetType() == typeof(PoslanickaGrupa))
                     {
                         PoslanickaGrupa poslanickaGrupa = (PoslanickaGrupa)organizacionaJedinica;
                         MessageBox.Show("Narodni poslanik " + narodniPoslanik.LicnoIme + ", je predsednik: " + poslanickaGrupa.Naziv);
@@ -552,7 +552,7 @@ namespace DatabseSystemsProject
 
                 session.Close();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 this.ShowExceptionData(exception);
             }
@@ -596,14 +596,14 @@ namespace DatabseSystemsProject
 
                 PoslanickaGrupa poslanickaGrupa = session.Load<PoslanickaGrupa>(34);
 
-                foreach(NarodniPoslanik clan in poslanickaGrupa.Clanovi)
+                foreach (NarodniPoslanik clan in poslanickaGrupa.Clanovi)
                 {
                     MessageBox.Show("Narodni poslanik " + clan.LicnoIme + ", je clan: " + poslanickaGrupa.Naziv);
                 }
 
                 session.Close();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 this.ShowExceptionData(exception);
             }
@@ -637,7 +637,7 @@ namespace DatabseSystemsProject
                 ISession session = DataLayer.GetSession();
 
                 SluzbenaProstorija p = new SluzbenaProstorija()
-                { 
+                {
                     Broj = 6,
                     Sprat = 1
                 };
@@ -680,7 +680,7 @@ namespace DatabseSystemsProject
                 SluzbenaProstorija p = session.Load<SluzbenaProstorija>(33);
 
                 int brojSobe = 3;
-                
+
                 p.Broj = brojSobe;
 
                 session.Update(p);
@@ -702,7 +702,7 @@ namespace DatabseSystemsProject
             {
                 ISession session = DataLayer.GetSession();
 
-                SluzbenaProstorija p = session.Load<SluzbenaProstorija>(51);
+                SluzbenaProstorija p = session.Load<SluzbenaProstorija>(33);
 
                 session.Delete(p);
 
@@ -722,8 +722,8 @@ namespace DatabseSystemsProject
                 ISession session = DataLayer.GetSession();
 
                 AktVlade avl = new AktVlade()
-                { 
-                   TipAkta = "odluka"
+                {
+                    TipAkta = "odluka"
                 };
 
                 AktViseOd1500Biraca abir = new AktViseOd1500Biraca()
@@ -736,7 +736,7 @@ namespace DatabseSystemsProject
                 {
                     TipAkta = "zakon"
                 };
-  
+
                 NarodniPoslanik np1 = session.Load<NarodniPoslanik>(31);
                 NarodniPoslanik np2 = session.Load<NarodniPoslanik>(32);
                 NarodniPoslanik np3 = session.Load<NarodniPoslanik>(33);
@@ -745,7 +745,7 @@ namespace DatabseSystemsProject
 
                 np2.PredlozeniAkti.Add(anp);
 
-                np2.PredlozeniAkti.Add(anp);
+                np3.PredlozeniAkti.Add(anp);
 
                 anp.Predlagaci.Add(np1);
                 anp.Predlagaci.Add(np2);
@@ -766,7 +766,7 @@ namespace DatabseSystemsProject
 
         private void btnReadSluzbeneProstorijePG_Click(object sender, EventArgs e)
         {
-             try
+            try
             {
                 ISession session = DataLayer.GetSession();
 
@@ -817,17 +817,17 @@ namespace DatabseSystemsProject
 
                 SluzbenaProstorija sluzbenaProstorija = session.Load<SluzbenaProstorija>(31);
 
-                foreach(OrganizacionaJedinica orgJedinica in sluzbenaProstorija.OrganizacioneJedinice)
+                foreach (OrganizacionaJedinica orgJedinica in sluzbenaProstorija.OrganizacioneJedinice)
                 {
-                   // MessageBox.Show(orgJedinica.Id.ToString());
+                    // MessageBox.Show(orgJedinica.Id.ToString());
 
-                   if(orgJedinica.GetType() == typeof(PoslanickaGrupa))
-                   {
+                    if (orgJedinica.GetType() == typeof(PoslanickaGrupa))
+                    {
                         PoslanickaGrupa pGr = (PoslanickaGrupa)orgJedinica;
                         MessageBox.Show(orgJedinica.Id.ToString() + ", " + pGr.Naziv);
                     }
-                   else if(orgJedinica.GetType() == typeof(RadnoTelo))
-                   {
+                    else if (orgJedinica.GetType() == typeof(RadnoTelo))
+                    {
                         RadnoTelo rTe = (RadnoTelo)orgJedinica;
                         MessageBox.Show(orgJedinica.Id.ToString() + ", " + rTe.TipRadnogTela);
                     }
@@ -867,14 +867,14 @@ namespace DatabseSystemsProject
 
                 AktViseOd1500Biraca akt = session.Load<AktViseOd1500Biraca>(33);
 
-                akt.BrojBiraca = 20201;
+                akt.BrojBiraca = 20203;
 
                 session.Update(akt);
 
                 session.Flush();
                 session.Close();
 
-                MessageBox.Show(" Novi broj biraca je 20201");
+                MessageBox.Show(" Novi broj biraca je 20203");
             }
             catch (Exception exception)
             {
@@ -891,7 +891,7 @@ namespace DatabseSystemsProject
 
                 string tekst = "";
 
-                foreach(var akt in akti)
+                foreach (var akt in akti)
                 {
                     if (akt.GetType() == typeof(AktViseOd1500Biraca))
                     {
@@ -921,7 +921,7 @@ namespace DatabseSystemsProject
             {
                 ISession session = DataLayer.GetSession();
 
-                AktVlade akt = session.Load<AktVlade>(31);
+                AktNarodnihPoslanika akt = session.Load<AktNarodnihPoslanika>(73);
 
                 session.Delete(akt);
 
@@ -940,17 +940,17 @@ namespace DatabseSystemsProject
             {
                 ISession session = DataLayer.GetSession();
 
-                AktNarodnihPoslanika akt = session.Load<AktNarodnihPoslanika>(39);
+                AktNarodnihPoslanika akt = session.Load<AktNarodnihPoslanika>(97);
 
                 string tekst = "";
 
                 foreach (var poslanik in akt.Predlagaci)
                 {
-                    tekst += poslanik.Id + ", " + poslanik.LicnoIme + ", " + poslanik.Prezime + " \n";
+                    tekst += poslanik.Id + ", " + poslanik.LicnoIme + " " + poslanik.Prezime + " \n";
                 }
 
                 MessageBox.Show(tekst);
-                    
+
                 session.Close();
             }
             catch (Exception exception)
@@ -967,7 +967,7 @@ namespace DatabseSystemsProject
 
                 NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(40);
 
-                foreach(Sednica sednica in narodniPoslanik.SazvaneSednice)
+                foreach (Sednica sednica in narodniPoslanik.SazvaneSednice)
                 {
                     MessageBox.Show("Ime: " + narodniPoslanik.LicnoIme + ", broj saziva sednice" + sednica.BrojSaziva);
                 }
@@ -1000,5 +1000,288 @@ namespace DatabseSystemsProject
                 MessageBox.Show(exception.Message);
             }
         }
-    }
+
+        private void btnCreateSednica_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                RedovnaSednica rSed = new RedovnaSednica()
+                {
+                    BrojZasedanja = 5,
+                    BrojSaziva = 3,
+                    DatumPocetka = new DateTime(2012, 5, 7),
+                    DatumZavrsetka = new DateTime(2012, 5, 8),
+                };
+
+                VanrednaSednica vSedVlade = new VanrednaSednica()
+                {
+                    BrojZasedanja = 6,
+                    BrojSaziva = 1,
+                    DatumPocetka = new DateTime(2012, 5, 21),
+                    DatumZavrsetka = new DateTime(2012, 5, 21),
+                    TipVanredneSednice = "na zahtev vlade"
+                };
+
+                VanrednaSednica vSedNP = new VanrednaSednica()
+                {
+                    BrojZasedanja = 6,
+                    BrojSaziva = 2,
+                    DatumPocetka = new DateTime(2019, 7, 21),
+                    DatumZavrsetka = new DateTime(2019, 7, 21),
+                    TipVanredneSednice = "na zahtev narodnih poslanika"
+                };
+
+                RadniDan rd1 = new RadniDan()
+                {
+                    DatumIVremePocetka = new DateTime(2012, 6, 7, 8, 10, 0),
+                    DatumIVremeZavrsetka = new DateTime(2012, 6, 7, 12, 32, 0),
+                    BrojPrisutnihPoslanika = 43
+                };
+
+                RadniDan rd2 = new RadniDan()
+                {
+                    DatumIVremePocetka = new DateTime(2012, 6, 7, 8, 10, 0),
+                    DatumIVremeZavrsetka = new DateTime(2012, 6, 7, 12, 32, 0),
+                    BrojPrisutnihPoslanika = 43
+                };
+
+                session.Save(rSed);
+                session.Save(vSedVlade);
+                session.Save(vSedNP);
+
+                //  dodavanje narodnih poslanika ostavicemo za poseban button
+
+                rd1.Sednica = rSed;
+                session.Save(rd1);
+
+                rd2.Sednica = vSedVlade;
+                session.Save(rd1);
+
+                // vanrednoj Sednici sazvanoj od strane narodnih poslanika dodelicemo radne dane u posebnom button-u
+                // rezervisanom za kreiranje radnog dana sednice
+
+                rSed.RadniDani.Add(rd1);
+                rSed.RadniDani.Add(rd2);
+
+                session.Save(rSed);
+                session.Save(vSedVlade);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnUpdateSednica_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                Sednica s = session.Load<VanrednaSednica>(39);
+                s.BrojZasedanja = 4;
+
+                session.Update(s);
+
+                session.Flush();
+                session.Close();
+
+                MessageBox.Show("Novi broj zasedanja je 4");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnReadSednica_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                VanrednaSednica vs = session.Load<VanrednaSednica>(32);
+
+                string prikaz = "Broj saziva: " + vs.BrojSaziva + "\nBroj zasedanja: " + vs.BrojZasedanja + "\nDatum pocetka" + vs.DatumPocetka.ToShortDateString()
+                    + "\nDatum zavrsetka" + vs.DatumZavrsetka.ToShortDateString() + " \nTip vanredne sednice: " + vs.TipVanredneSednice;
+
+                MessageBox.Show(prikaz);
+
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnReadRadniDaniSednice_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                VanrednaSednica vs = session.Load<VanrednaSednica>(32);
+
+                string prikaz = "";
+
+                foreach(var radniDan in vs.RadniDani)
+                {
+                    prikaz += "Pocetak: " + radniDan.DatumIVremePocetka.ToString() + ", Zavrsetak: " + radniDan.DatumIVremeZavrsetka.ToString()
+                        + ", Broj prisutnih poslanika: " + radniDan.BrojPrisutnihPoslanika + "\n";
+                }
+
+                MessageBox.Show(prikaz);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnReadSazivaociVanrednaSednicaNarodnihPoslanika_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                VanrednaSednica vs = session.Load<VanrednaSednica>(39);
+
+                string prikaz = "Sazivaoci: ";
+
+                foreach (var poslanik in vs.Sazivaoci)
+                {
+                    prikaz += "\n" + poslanik.LicnoIme + " " + poslanik.ImeRoditelja + " " + poslanik.Prezime;
+                }
+
+                MessageBox.Show(prikaz);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnCreateSazivaoci_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                VanrednaSednica s = session.Load<VanrednaSednica>(34);
+
+                session.Delete(s);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnReadRadniDan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                RadniDan rd = (from r in session.Query<RadniDan>() where (r.Sednica.Id == 32) select r).First<RadniDan>();
+
+                MessageBox.Show("Datum: " + rd.DatumIVremePocetka.ToShortDateString() +
+                    "\nPocetak: " + rd.DatumIVremePocetka.ToShortTimeString() + 
+                    "\nZavrsetak: " + rd.DatumIVremeZavrsetka.ToShortTimeString() +
+                    "\nBroj prisutnih poslanika: " + rd.BrojPrisutnihPoslanika);
+
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnUpdateRadniDan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                RadniDan rd = (from r in session.Query<RadniDan>() where (r.Sednica.Id == 32) select r).First<RadniDan>();
+
+                rd.BrojPrisutnihPoslanika = 78;
+
+                int id = rd.Id;
+
+                session.Update(rd);
+
+                session.Flush();
+                session.Close();
+
+                MessageBox.Show("Novi broj poslanika entiteta RadniDan sa id-jem " + id + " iznosi 78");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnReadSednicaForRadniDan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                RadniDan rd = session.Load<RadniDan>(32);
+
+                MessageBox.Show("Broj Zasedanja: " + rd.Sednica.BrojZasedanja +" Broj saziva: " + rd.Sednica.BrojSaziva.ToString());
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnDeleteRadniDan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                IList<RadniDan> radniDani = (from r in session.Query<RadniDan>() where (r.Sednica.Id == 72) select r).ToList<RadniDan>();
+
+                foreach (var rd in radniDani)
+                    session.Delete(rd);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
+        }
+    }       
 }

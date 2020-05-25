@@ -103,7 +103,7 @@ namespace DatabseSystemsProject
             {
                 ISession session = DataLayer.GetSession();
 
-                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(72);
+                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(71);
 
                 session.Delete(narodniPoslanik);
 
@@ -199,7 +199,7 @@ namespace DatabseSystemsProject
             {
                 ISession session = DataLayer.GetSession();
 
-                StalnoZaposlen stalnoZaposlen = session.Load<StalnoZaposlen>(33);
+                StalnoZaposlen stalnoZaposlen = session.Load<StalnoZaposlen>(34);
 
                 session.Delete(stalnoZaposlen);
 
@@ -284,7 +284,7 @@ namespace DatabseSystemsProject
 
                 Telefon telefon = session.Load<Telefon>(37);
 
-                telefon.BrojTelefona = "+381 22222222";
+                telefon.BrojTelefona = "+381 2222632222";
 
                 session.Update(telefon);
 
@@ -328,7 +328,7 @@ namespace DatabseSystemsProject
 
                 PoslanickaGrupa poslanickaGrupa = new PoslanickaGrupa()
                 {
-                    Naziv = "Grupa Console"
+                    Naziv = "Grupa Console1"
                 };
 
                 poslanickaGrupa.Predsednik = predsednik;
@@ -506,18 +506,11 @@ namespace DatabseSystemsProject
             {
                 ISession session = DataLayer.GetSession();
 
-                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(75);
+                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(32);
 
                 foreach (JeClan jeClan in narodniPoslanik.JeClanOrganizacionihJedinica)
                 {
-                    if (jeClan.OrganizacionaJedinica.GetType() == typeof(PoslanickaGrupa))
-                    {
-                        MessageBox.Show("Narodni poslanik " + narodniPoslanik.LicnoIme + ", je clan: " + jeClan.OrganizacionaJedinica.Naziv);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Narodni poslanik " + narodniPoslanik.LicnoIme + ", je clan: " + jeClan.OrganizacionaJedinica.TipRadnogTela);
-                    }
+                    MessageBox.Show("Narodni poslanik " + narodniPoslanik.LicnoIme + ", je clan: " + jeClan.OrganizacionaJedinica.Id);
                 }
             }
             catch (Exception exception)
@@ -735,20 +728,6 @@ namespace DatabseSystemsProject
                     TipAkta = "zakon"
                 };
 
-                NarodniPoslanik np1 = session.Load<NarodniPoslanik>(31);
-                NarodniPoslanik np2 = session.Load<NarodniPoslanik>(32);
-                NarodniPoslanik np3 = session.Load<NarodniPoslanik>(33);
-
-                //np1.PredlozeniAkti.Add(anp);
-
-                //np2.PredlozeniAkti.Add(anp);
-
-                //np3.PredlozeniAkti.Add(anp);
-
-                //anp.Predlagaci.Add(np1);
-                //anp.Predlagaci.Add(np2);
-                //anp.Predlagaci.Add(np3);
-
                 session.Save(anp);
                 session.Save(avl);
                 session.Save(abir);
@@ -863,7 +842,7 @@ namespace DatabseSystemsProject
 
                 AktViseOd1500Biraca akt = session.Load<AktViseOd1500Biraca>(33);
 
-                akt.BrojBiraca = 20203;
+                akt.BrojBiraca = 20299;
 
                 session.Update(akt);
 
@@ -917,7 +896,7 @@ namespace DatabseSystemsProject
             {
                 ISession session = DataLayer.GetSession();
 
-                AktNarodnihPoslanika akt = session.Load<AktNarodnihPoslanika>(73);
+                AktNarodnihPoslanika akt = session.Load<AktNarodnihPoslanika>(114);
 
                 session.Delete(akt);
 
@@ -936,7 +915,7 @@ namespace DatabseSystemsProject
             {
                 ISession session = DataLayer.GetSession();
 
-                AktNarodnihPoslanika akt = session.Load<AktNarodnihPoslanika>(97);
+                AktNarodnihPoslanika akt = session.Load<AktNarodnihPoslanika>(103);
 
                 string tekst = "";
 
@@ -982,7 +961,7 @@ namespace DatabseSystemsProject
             {
                 ISession session = DataLayer.GetSession();
 
-                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(40);
+                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(31);
 
                 foreach (JePredlozio jePredlozio in narodniPoslanik.JePredlozioAkte)
                 {
@@ -1007,16 +986,16 @@ namespace DatabseSystemsProject
                 {
                     BrojZasedanja = 5,
                     BrojSaziva = 3,
-                    DatumPocetka = new DateTime(2012, 5, 7),
-                    DatumZavrsetka = new DateTime(2012, 5, 8),
+                    DatumPocetka = new DateTime(2012, 1, 1),
+                    DatumZavrsetka = new DateTime(2012, 1, 1),
                 };
 
                 VanrednaSednica vSedVlade = new VanrednaSednica()
                 {
                     BrojZasedanja = 6,
                     BrojSaziva = 1,
-                    DatumPocetka = new DateTime(2012, 5, 21),
-                    DatumZavrsetka = new DateTime(2012, 5, 21),
+                    DatumPocetka = new DateTime(2012, 5, 1),
+                    DatumZavrsetka = new DateTime(2012, 5, 1),
                     TipVanredneSednice = "na zahtev vlade"
                 };
 
@@ -1024,22 +1003,22 @@ namespace DatabseSystemsProject
                 {
                     BrojZasedanja = 6,
                     BrojSaziva = 2,
-                    DatumPocetka = new DateTime(2019, 7, 21),
-                    DatumZavrsetka = new DateTime(2019, 7, 21),
+                    DatumPocetka = new DateTime(2012, 7, 1),
+                    DatumZavrsetka = new DateTime(2012, 7, 2),
                     TipVanredneSednice = "na zahtev narodnih poslanika"
                 };
 
                 RadniDan rd1 = new RadniDan()
                 {
-                    DatumIVremePocetka = new DateTime(2012, 6, 7, 8, 10, 0),
-                    DatumIVremeZavrsetka = new DateTime(2012, 6, 7, 12, 32, 0),
+                    DatumIVremePocetka = new DateTime(2012, 1, 1, 8, 10, 0),
+                    DatumIVremeZavrsetka = new DateTime(2012, 1, 1, 12, 32, 0),
                     BrojPrisutnihPoslanika = 43
                 };
 
                 RadniDan rd2 = new RadniDan()
                 {
-                    DatumIVremePocetka = new DateTime(2012, 6, 7, 8, 10, 0),
-                    DatumIVremeZavrsetka = new DateTime(2012, 6, 7, 12, 32, 0),
+                    DatumIVremePocetka = new DateTime(2012, 5, 1, 8, 10, 0),
+                    DatumIVremeZavrsetka = new DateTime(2012, 5, 1, 12, 32, 0),
                     BrojPrisutnihPoslanika = 43
                 };
 
@@ -1047,13 +1026,9 @@ namespace DatabseSystemsProject
                 session.Save(vSedVlade);
                 session.Save(vSedNP);
 
-                //  dodavanje narodnih poslanika ostavicemo za poseban button
-
                 rd1.Sednica = rSed;
-                session.Save(rd1);
 
                 rd2.Sednica = vSedVlade;
-                session.Save(rd1);
 
                 // vanrednoj Sednici sazvanoj od strane narodnih poslanika dodelicemo radne dane u posebnom button-u
                 // rezervisanom za kreiranje radnog dana sednice
@@ -1182,7 +1157,7 @@ namespace DatabseSystemsProject
             {
                 ISession session = DataLayer.GetSession();
 
-                VanrednaSednica s = session.Load<VanrednaSednica>(34);
+                RedovnaSednica s = session.Load<RedovnaSednica>(36);
 
                 session.Delete(s);
 
@@ -1265,7 +1240,7 @@ namespace DatabseSystemsProject
             {
                 ISession session = DataLayer.GetSession();
 
-                IList<RadniDan> radniDani = (from r in session.Query<RadniDan>() where (r.Sednica.Id == 72) select r).ToList<RadniDan>();
+                IList<RadniDan> radniDani = (from r in session.Query<RadniDan>() where (r.Sednica.Id == 93) select r).ToList<RadniDan>();
 
                 foreach (var rd in radniDani)
                     session.Delete(rd);
@@ -1278,6 +1253,158 @@ namespace DatabseSystemsProject
                 MessageBox.Show(exception.Message);
             }
 
+        }
+
+        private void btnCreateJePredlozio_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                AktNarodnihPoslanika anp = session.Load<AktNarodnihPoslanika>(103);
+
+                NarodniPoslanik np1 = session.Load<NarodniPoslanik>(31);
+                NarodniPoslanik np2 = session.Load<NarodniPoslanik>(32);
+                NarodniPoslanik np3 = session.Load<NarodniPoslanik>(40);
+
+                JePredlozio jepredlozio1 = new JePredlozio();
+                jepredlozio1.NarodniPoslanik = np1;
+                jepredlozio1.Akt = anp;
+
+                JePredlozio jepredlozio2 = new JePredlozio();
+                jepredlozio2.NarodniPoslanik = np2;
+                jepredlozio2.Akt = anp;
+
+                JePredlozio jepredlozio3 = new JePredlozio();
+                jepredlozio3.NarodniPoslanik = np3;
+                jepredlozio3.Akt = anp;
+
+                session.Save(jepredlozio1);
+                session.Save(jepredlozio2);
+                session.Save(jepredlozio3);
+
+                //anp.JePredlozioNarodniPoslanici.Add(jepredlozio1);
+                //anp.JePredlozioNarodniPoslanici.Add(jepredlozio2);
+                //anp.JePredlozioNarodniPoslanici.Add(jepredlozio3);
+
+               // session.Save(anp);
+
+                session.Flush();
+                session.Close();
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnCreateJeClan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                NarodniPoslanik np1 = session.Load<NarodniPoslanik>(37);
+                PoslanickaGrupa pg = session.Load<PoslanickaGrupa>(36);
+
+                JeClan jc = new JeClan();
+                jc.NarodniPoslanik = np1;
+                jc.OrganizacionaJedinica = pg;
+
+                session.Save(jc);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnJeSazvalo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                VanrednaSednica vanrednaSednica = session.Load<VanrednaSednica>(39);
+                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(65);
+
+                JeSazvalo jeSazvalo = new JeSazvalo();
+                jeSazvalo.NarodniPoslanik = narodniPoslanik;
+                jeSazvalo.Sednica = vanrednaSednica;
+
+                session.Save(jeSazvalo);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnJeDodeljena_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession session = DataLayer.GetSession();
+
+                RadnoTelo radnoTelo = session.Load<RadnoTelo>(32);
+                SluzbenaProstorija sluzbenaProstorija = session.Load<SluzbenaProstorija>(44);
+
+                JeDodeljena postoji = (from jd in session.Query<JeDodeljena>()
+                                       where (jd.OrganizacionaJedinica == radnoTelo)
+                                       select jd)
+                                        .FirstOrDefault();
+
+                //Posto Poslanickoj Grupi i Radnom Telu dodeljujemo prostprije kroz 
+                //tabelu JE_DODELJENA, a radnom telu se oddeljue samo jedna prostorija po tekstu zadatka
+                // to moramo proveriti putem aplikacije
+
+
+                if(postoji != null)
+                {
+                    MessageBox.Show("Zeljenom radnom telu je vec dodeljena sluzbena prostorija na koriscenje!");
+                    session.Flush();
+                    session.Close();
+
+                    return;
+                }
+
+                JeDodeljena jeDodeljena = new JeDodeljena();
+                jeDodeljena.SluzbenaProstorija = sluzbenaProstorija;
+                jeDodeljena.OrganizacionaJedinica = radnoTelo;
+
+                session.Save(jeDodeljena);
+
+                session.Flush();
+                session.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
     }       
 }

@@ -12,7 +12,7 @@ namespace DatabseSystemsProject.Mappings
     {
         public JeSazvaloMap()
         {
-            Table("JE_CLAN");
+            Table("JE_SAZVALO");
 
             Id(x => x.Id).GeneratedBy.TriggerIdentity();
 

@@ -80,12 +80,16 @@
             this.btnUpdateRadniDan = new System.Windows.Forms.Button();
             this.btnDeleteRadniDan = new System.Windows.Forms.Button();
             this.btnReadSednicaForRadniDan = new System.Windows.Forms.Button();
+            this.btnCreateJePredlozio = new System.Windows.Forms.Button();
+            this.btnCreateJeClan = new System.Windows.Forms.Button();
+            this.btnJeSazvalo = new System.Windows.Forms.Button();
+            this.btnJeDodeljena = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDeleteNarodniPoslanik
             // 
             this.btnDeleteNarodniPoslanik.Location = new System.Drawing.Point(9, 107);
-            this.btnDeleteNarodniPoslanik.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeleteNarodniPoslanik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDeleteNarodniPoslanik.Name = "btnDeleteNarodniPoslanik";
             this.btnDeleteNarodniPoslanik.Size = new System.Drawing.Size(136, 28);
             this.btnDeleteNarodniPoslanik.TabIndex = 10;
@@ -96,7 +100,7 @@
             // btnUpdateNarodniPoslanik
             // 
             this.btnUpdateNarodniPoslanik.Location = new System.Drawing.Point(9, 75);
-            this.btnUpdateNarodniPoslanik.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateNarodniPoslanik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdateNarodniPoslanik.Name = "btnUpdateNarodniPoslanik";
             this.btnUpdateNarodniPoslanik.Size = new System.Drawing.Size(136, 28);
             this.btnUpdateNarodniPoslanik.TabIndex = 9;
@@ -107,7 +111,7 @@
             // btnCreateNarodniPoslanik
             // 
             this.btnCreateNarodniPoslanik.Location = new System.Drawing.Point(9, 10);
-            this.btnCreateNarodniPoslanik.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCreateNarodniPoslanik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCreateNarodniPoslanik.Name = "btnCreateNarodniPoslanik";
             this.btnCreateNarodniPoslanik.Size = new System.Drawing.Size(136, 28);
             this.btnCreateNarodniPoslanik.TabIndex = 8;
@@ -118,7 +122,7 @@
             // btnReadNarodniPoslanik
             // 
             this.btnReadNarodniPoslanik.Location = new System.Drawing.Point(9, 42);
-            this.btnReadNarodniPoslanik.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadNarodniPoslanik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReadNarodniPoslanik.Name = "btnReadNarodniPoslanik";
             this.btnReadNarodniPoslanik.Size = new System.Drawing.Size(136, 28);
             this.btnReadNarodniPoslanik.TabIndex = 7;
@@ -129,7 +133,7 @@
             // btnDeleteStalnoZaposlen
             // 
             this.btnDeleteStalnoZaposlen.Location = new System.Drawing.Point(150, 107);
-            this.btnDeleteStalnoZaposlen.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeleteStalnoZaposlen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDeleteStalnoZaposlen.Name = "btnDeleteStalnoZaposlen";
             this.btnDeleteStalnoZaposlen.Size = new System.Drawing.Size(133, 28);
             this.btnDeleteStalnoZaposlen.TabIndex = 14;
@@ -140,7 +144,7 @@
             // btnUpdateStalnoZaposlen
             // 
             this.btnUpdateStalnoZaposlen.Location = new System.Drawing.Point(150, 75);
-            this.btnUpdateStalnoZaposlen.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateStalnoZaposlen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdateStalnoZaposlen.Name = "btnUpdateStalnoZaposlen";
             this.btnUpdateStalnoZaposlen.Size = new System.Drawing.Size(133, 28);
             this.btnUpdateStalnoZaposlen.TabIndex = 13;
@@ -151,7 +155,7 @@
             // btnReadStalnoZaposlen
             // 
             this.btnReadStalnoZaposlen.Location = new System.Drawing.Point(150, 42);
-            this.btnReadStalnoZaposlen.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadStalnoZaposlen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReadStalnoZaposlen.Name = "btnReadStalnoZaposlen";
             this.btnReadStalnoZaposlen.Size = new System.Drawing.Size(133, 28);
             this.btnReadStalnoZaposlen.TabIndex = 12;
@@ -162,7 +166,7 @@
             // btnCreateStalnoZaposlen
             // 
             this.btnCreateStalnoZaposlen.Location = new System.Drawing.Point(150, 10);
-            this.btnCreateStalnoZaposlen.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCreateStalnoZaposlen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCreateStalnoZaposlen.Name = "btnCreateStalnoZaposlen";
             this.btnCreateStalnoZaposlen.Size = new System.Drawing.Size(133, 28);
             this.btnCreateStalnoZaposlen.TabIndex = 11;
@@ -173,7 +177,7 @@
             // btnReadTelefon
             // 
             this.btnReadTelefon.Location = new System.Drawing.Point(287, 42);
-            this.btnReadTelefon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadTelefon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReadTelefon.Name = "btnReadTelefon";
             this.btnReadTelefon.Size = new System.Drawing.Size(133, 28);
             this.btnReadTelefon.TabIndex = 15;
@@ -184,7 +188,7 @@
             // btnUpdateTelefon
             // 
             this.btnUpdateTelefon.Location = new System.Drawing.Point(287, 75);
-            this.btnUpdateTelefon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateTelefon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdateTelefon.Name = "btnUpdateTelefon";
             this.btnUpdateTelefon.Size = new System.Drawing.Size(133, 28);
             this.btnUpdateTelefon.TabIndex = 16;
@@ -195,7 +199,7 @@
             // btnDeleteTelefon
             // 
             this.btnDeleteTelefon.Location = new System.Drawing.Point(287, 107);
-            this.btnDeleteTelefon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeleteTelefon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDeleteTelefon.Name = "btnDeleteTelefon";
             this.btnDeleteTelefon.Size = new System.Drawing.Size(133, 28);
             this.btnDeleteTelefon.TabIndex = 17;
@@ -206,7 +210,7 @@
             // btnCreateTelefon
             // 
             this.btnCreateTelefon.Location = new System.Drawing.Point(287, 10);
-            this.btnCreateTelefon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCreateTelefon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCreateTelefon.Name = "btnCreateTelefon";
             this.btnCreateTelefon.Size = new System.Drawing.Size(133, 28);
             this.btnCreateTelefon.TabIndex = 18;
@@ -216,8 +220,8 @@
             // 
             // btnReadTelefoni
             // 
-            this.btnReadTelefoni.Location = new System.Drawing.Point(9, 163);
-            this.btnReadTelefoni.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadTelefoni.Location = new System.Drawing.Point(9, 144);
+            this.btnReadTelefoni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReadTelefoni.Name = "btnReadTelefoni";
             this.btnReadTelefoni.Size = new System.Drawing.Size(136, 28);
             this.btnReadTelefoni.TabIndex = 19;
@@ -227,8 +231,8 @@
             // 
             // btnCreatePoslanickaGrupa
             // 
-            this.btnCreatePoslanickaGrupa.Location = new System.Drawing.Point(503, 10);
-            this.btnCreatePoslanickaGrupa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCreatePoslanickaGrupa.Location = new System.Drawing.Point(446, 10);
+            this.btnCreatePoslanickaGrupa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCreatePoslanickaGrupa.Name = "btnCreatePoslanickaGrupa";
             this.btnCreatePoslanickaGrupa.Size = new System.Drawing.Size(140, 28);
             this.btnCreatePoslanickaGrupa.TabIndex = 20;
@@ -238,8 +242,8 @@
             // 
             // btnReadPoslanickaGrupa
             // 
-            this.btnReadPoslanickaGrupa.Location = new System.Drawing.Point(503, 42);
-            this.btnReadPoslanickaGrupa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadPoslanickaGrupa.Location = new System.Drawing.Point(446, 42);
+            this.btnReadPoslanickaGrupa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReadPoslanickaGrupa.Name = "btnReadPoslanickaGrupa";
             this.btnReadPoslanickaGrupa.Size = new System.Drawing.Size(140, 28);
             this.btnReadPoslanickaGrupa.TabIndex = 21;
@@ -249,8 +253,8 @@
             // 
             // btnUpdatePoslanickaGrupa
             // 
-            this.btnUpdatePoslanickaGrupa.Location = new System.Drawing.Point(503, 75);
-            this.btnUpdatePoslanickaGrupa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdatePoslanickaGrupa.Location = new System.Drawing.Point(446, 75);
+            this.btnUpdatePoslanickaGrupa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdatePoslanickaGrupa.Name = "btnUpdatePoslanickaGrupa";
             this.btnUpdatePoslanickaGrupa.Size = new System.Drawing.Size(140, 28);
             this.btnUpdatePoslanickaGrupa.TabIndex = 22;
@@ -260,8 +264,8 @@
             // 
             // btnDeletePoslanickaGrupa
             // 
-            this.btnDeletePoslanickaGrupa.Location = new System.Drawing.Point(503, 107);
-            this.btnDeletePoslanickaGrupa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeletePoslanickaGrupa.Location = new System.Drawing.Point(446, 107);
+            this.btnDeletePoslanickaGrupa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDeletePoslanickaGrupa.Name = "btnDeletePoslanickaGrupa";
             this.btnDeletePoslanickaGrupa.Size = new System.Drawing.Size(140, 28);
             this.btnDeletePoslanickaGrupa.TabIndex = 23;
@@ -271,8 +275,8 @@
             // 
             // btnCreateRadnoTelo
             // 
-            this.btnCreateRadnoTelo.Location = new System.Drawing.Point(647, 10);
-            this.btnCreateRadnoTelo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCreateRadnoTelo.Location = new System.Drawing.Point(590, 10);
+            this.btnCreateRadnoTelo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCreateRadnoTelo.Name = "btnCreateRadnoTelo";
             this.btnCreateRadnoTelo.Size = new System.Drawing.Size(140, 28);
             this.btnCreateRadnoTelo.TabIndex = 24;
@@ -282,8 +286,8 @@
             // 
             // btnReadRadnoTelo
             // 
-            this.btnReadRadnoTelo.Location = new System.Drawing.Point(647, 42);
-            this.btnReadRadnoTelo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadRadnoTelo.Location = new System.Drawing.Point(590, 42);
+            this.btnReadRadnoTelo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReadRadnoTelo.Name = "btnReadRadnoTelo";
             this.btnReadRadnoTelo.Size = new System.Drawing.Size(140, 28);
             this.btnReadRadnoTelo.TabIndex = 25;
@@ -293,8 +297,8 @@
             // 
             // btnUpdateRadnoTelo
             // 
-            this.btnUpdateRadnoTelo.Location = new System.Drawing.Point(647, 75);
-            this.btnUpdateRadnoTelo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateRadnoTelo.Location = new System.Drawing.Point(590, 75);
+            this.btnUpdateRadnoTelo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdateRadnoTelo.Name = "btnUpdateRadnoTelo";
             this.btnUpdateRadnoTelo.Size = new System.Drawing.Size(140, 28);
             this.btnUpdateRadnoTelo.TabIndex = 26;
@@ -304,8 +308,8 @@
             // 
             // btnDeleteRadnoTelo
             // 
-            this.btnDeleteRadnoTelo.Location = new System.Drawing.Point(647, 107);
-            this.btnDeleteRadnoTelo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeleteRadnoTelo.Location = new System.Drawing.Point(590, 107);
+            this.btnDeleteRadnoTelo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDeleteRadnoTelo.Name = "btnDeleteRadnoTelo";
             this.btnDeleteRadnoTelo.Size = new System.Drawing.Size(140, 28);
             this.btnDeleteRadnoTelo.TabIndex = 27;
@@ -315,8 +319,8 @@
             // 
             // btnReadJeClan
             // 
-            this.btnReadJeClan.Location = new System.Drawing.Point(9, 228);
-            this.btnReadJeClan.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadJeClan.Location = new System.Drawing.Point(9, 179);
+            this.btnReadJeClan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReadJeClan.Name = "btnReadJeClan";
             this.btnReadJeClan.Size = new System.Drawing.Size(136, 28);
             this.btnReadJeClan.TabIndex = 29;
@@ -326,8 +330,8 @@
             // 
             // btnReadJePredsednik
             // 
-            this.btnReadJePredsednik.Location = new System.Drawing.Point(9, 261);
-            this.btnReadJePredsednik.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadJePredsednik.Location = new System.Drawing.Point(9, 212);
+            this.btnReadJePredsednik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReadJePredsednik.Name = "btnReadJePredsednik";
             this.btnReadJePredsednik.Size = new System.Drawing.Size(136, 28);
             this.btnReadJePredsednik.TabIndex = 31;
@@ -337,8 +341,8 @@
             // 
             // btnReadJeZamenik
             // 
-            this.btnReadJeZamenik.Location = new System.Drawing.Point(9, 293);
-            this.btnReadJeZamenik.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadJeZamenik.Location = new System.Drawing.Point(9, 244);
+            this.btnReadJeZamenik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReadJeZamenik.Name = "btnReadJeZamenik";
             this.btnReadJeZamenik.Size = new System.Drawing.Size(136, 28);
             this.btnReadJeZamenik.TabIndex = 32;
@@ -348,8 +352,8 @@
             // 
             // btnReadClanoviPG
             // 
-            this.btnReadClanoviPG.Location = new System.Drawing.Point(503, 228);
-            this.btnReadClanoviPG.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadClanoviPG.Location = new System.Drawing.Point(446, 139);
+            this.btnReadClanoviPG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReadClanoviPG.Name = "btnReadClanoviPG";
             this.btnReadClanoviPG.Size = new System.Drawing.Size(140, 28);
             this.btnReadClanoviPG.TabIndex = 33;
@@ -359,8 +363,8 @@
             // 
             // btnReadClanoviRT
             // 
-            this.btnReadClanoviRT.Location = new System.Drawing.Point(647, 228);
-            this.btnReadClanoviRT.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadClanoviRT.Location = new System.Drawing.Point(590, 139);
+            this.btnReadClanoviRT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReadClanoviRT.Name = "btnReadClanoviRT";
             this.btnReadClanoviRT.Size = new System.Drawing.Size(140, 28);
             this.btnReadClanoviRT.TabIndex = 34;
@@ -370,7 +374,7 @@
             // 
             // btnCreateSluzbenaProstorija
             // 
-            this.btnCreateSluzbenaProstorija.Location = new System.Drawing.Point(865, 10);
+            this.btnCreateSluzbenaProstorija.Location = new System.Drawing.Point(758, 12);
             this.btnCreateSluzbenaProstorija.Name = "btnCreateSluzbenaProstorija";
             this.btnCreateSluzbenaProstorija.Size = new System.Drawing.Size(146, 28);
             this.btnCreateSluzbenaProstorija.TabIndex = 35;
@@ -380,7 +384,7 @@
             // 
             // btnReadSluzbenaProstorija
             // 
-            this.btnReadSluzbenaProstorija.Location = new System.Drawing.Point(865, 42);
+            this.btnReadSluzbenaProstorija.Location = new System.Drawing.Point(758, 44);
             this.btnReadSluzbenaProstorija.Name = "btnReadSluzbenaProstorija";
             this.btnReadSluzbenaProstorija.Size = new System.Drawing.Size(146, 28);
             this.btnReadSluzbenaProstorija.TabIndex = 36;
@@ -390,7 +394,7 @@
             // 
             // btnUpdateSluzbenaProstorija
             // 
-            this.btnUpdateSluzbenaProstorija.Location = new System.Drawing.Point(865, 75);
+            this.btnUpdateSluzbenaProstorija.Location = new System.Drawing.Point(758, 77);
             this.btnUpdateSluzbenaProstorija.Name = "btnUpdateSluzbenaProstorija";
             this.btnUpdateSluzbenaProstorija.Size = new System.Drawing.Size(146, 28);
             this.btnUpdateSluzbenaProstorija.TabIndex = 38;
@@ -400,7 +404,7 @@
             // 
             // btnDeleteSluzbenaProstorija
             // 
-            this.btnDeleteSluzbenaProstorija.Location = new System.Drawing.Point(865, 107);
+            this.btnDeleteSluzbenaProstorija.Location = new System.Drawing.Point(758, 109);
             this.btnDeleteSluzbenaProstorija.Name = "btnDeleteSluzbenaProstorija";
             this.btnDeleteSluzbenaProstorija.Size = new System.Drawing.Size(146, 27);
             this.btnDeleteSluzbenaProstorija.TabIndex = 39;
@@ -410,7 +414,7 @@
             // 
             // btnReadZauzeteProstorije
             // 
-            this.btnReadZauzeteProstorije.Location = new System.Drawing.Point(865, 228);
+            this.btnReadZauzeteProstorije.Location = new System.Drawing.Point(758, 142);
             this.btnReadZauzeteProstorije.Name = "btnReadZauzeteProstorije";
             this.btnReadZauzeteProstorije.Size = new System.Drawing.Size(146, 28);
             this.btnReadZauzeteProstorije.TabIndex = 40;
@@ -420,7 +424,7 @@
             // 
             // btnCreateAkt
             // 
-            this.btnCreateAkt.Location = new System.Drawing.Point(1090, 10);
+            this.btnCreateAkt.Location = new System.Drawing.Point(302, 156);
             this.btnCreateAkt.Name = "btnCreateAkt";
             this.btnCreateAkt.Size = new System.Drawing.Size(118, 28);
             this.btnCreateAkt.TabIndex = 41;
@@ -430,8 +434,8 @@
             // 
             // btnReadSluzbeneProstorijePG
             // 
-            this.btnReadSluzbeneProstorijePG.Location = new System.Drawing.Point(503, 261);
-            this.btnReadSluzbeneProstorijePG.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadSluzbeneProstorijePG.Location = new System.Drawing.Point(446, 172);
+            this.btnReadSluzbeneProstorijePG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReadSluzbeneProstorijePG.Name = "btnReadSluzbeneProstorijePG";
             this.btnReadSluzbeneProstorijePG.Size = new System.Drawing.Size(140, 42);
             this.btnReadSluzbeneProstorijePG.TabIndex = 42;
@@ -441,8 +445,8 @@
             // 
             // btnReadSluzbenaProstorijaRT
             // 
-            this.btnReadSluzbenaProstorijaRT.Location = new System.Drawing.Point(648, 261);
-            this.btnReadSluzbenaProstorijaRT.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadSluzbenaProstorijaRT.Location = new System.Drawing.Point(591, 172);
+            this.btnReadSluzbenaProstorijaRT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReadSluzbenaProstorijaRT.Name = "btnReadSluzbenaProstorijaRT";
             this.btnReadSluzbenaProstorijaRT.Size = new System.Drawing.Size(140, 42);
             this.btnReadSluzbenaProstorijaRT.TabIndex = 43;
@@ -452,7 +456,7 @@
             // 
             // btnReadAkt
             // 
-            this.btnReadAkt.Location = new System.Drawing.Point(1090, 42);
+            this.btnReadAkt.Location = new System.Drawing.Point(302, 190);
             this.btnReadAkt.Name = "btnReadAkt";
             this.btnReadAkt.Size = new System.Drawing.Size(118, 28);
             this.btnReadAkt.TabIndex = 44;
@@ -462,7 +466,7 @@
             // 
             // btnUpdateAkt
             // 
-            this.btnUpdateAkt.Location = new System.Drawing.Point(1090, 75);
+            this.btnUpdateAkt.Location = new System.Drawing.Point(302, 223);
             this.btnUpdateAkt.Name = "btnUpdateAkt";
             this.btnUpdateAkt.Size = new System.Drawing.Size(118, 26);
             this.btnUpdateAkt.TabIndex = 45;
@@ -472,7 +476,7 @@
             // 
             // btnReadAllAkt
             // 
-            this.btnReadAllAkt.Location = new System.Drawing.Point(1090, 107);
+            this.btnReadAllAkt.Location = new System.Drawing.Point(302, 255);
             this.btnReadAllAkt.Name = "btnReadAllAkt";
             this.btnReadAllAkt.Size = new System.Drawing.Size(118, 27);
             this.btnReadAllAkt.TabIndex = 46;
@@ -482,7 +486,7 @@
             // 
             // btnDeleteAkt
             // 
-            this.btnDeleteAkt.Location = new System.Drawing.Point(1090, 140);
+            this.btnDeleteAkt.Location = new System.Drawing.Point(302, 288);
             this.btnDeleteAkt.Name = "btnDeleteAkt";
             this.btnDeleteAkt.Size = new System.Drawing.Size(118, 23);
             this.btnDeleteAkt.TabIndex = 47;
@@ -492,7 +496,7 @@
             // 
             // btnReadPredlagaci
             // 
-            this.btnReadPredlagaci.Location = new System.Drawing.Point(1090, 228);
+            this.btnReadPredlagaci.Location = new System.Drawing.Point(302, 322);
             this.btnReadPredlagaci.Name = "btnReadPredlagaci";
             this.btnReadPredlagaci.Size = new System.Drawing.Size(118, 28);
             this.btnReadPredlagaci.TabIndex = 48;
@@ -502,8 +506,8 @@
             // 
             // btnReadSazvaneSednice
             // 
-            this.btnReadSazvaneSednice.Location = new System.Drawing.Point(9, 358);
-            this.btnReadSazvaneSednice.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadSazvaneSednice.Location = new System.Drawing.Point(9, 276);
+            this.btnReadSazvaneSednice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReadSazvaneSednice.Name = "btnReadSazvaneSednice";
             this.btnReadSazvaneSednice.Size = new System.Drawing.Size(136, 28);
             this.btnReadSazvaneSednice.TabIndex = 49;
@@ -513,8 +517,8 @@
             // 
             // btnReadPredlozeniAkti
             // 
-            this.btnReadPredlozeniAkti.Location = new System.Drawing.Point(9, 422);
-            this.btnReadPredlozeniAkti.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadPredlozeniAkti.Location = new System.Drawing.Point(9, 308);
+            this.btnReadPredlozeniAkti.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReadPredlozeniAkti.Name = "btnReadPredlozeniAkti";
             this.btnReadPredlozeniAkti.Size = new System.Drawing.Size(136, 28);
             this.btnReadPredlozeniAkti.TabIndex = 50;
@@ -524,9 +528,9 @@
             // 
             // btnCreateSednica
             // 
-            this.btnCreateSednica.Location = new System.Drawing.Point(848, 377);
+            this.btnCreateSednica.Location = new System.Drawing.Point(765, 189);
             this.btnCreateSednica.Name = "btnCreateSednica";
-            this.btnCreateSednica.Size = new System.Drawing.Size(163, 23);
+            this.btnCreateSednica.Size = new System.Drawing.Size(139, 39);
             this.btnCreateSednica.TabIndex = 51;
             this.btnCreateSednica.Text = "CreateSednica With RadniDani";
             this.btnCreateSednica.UseVisualStyleBackColor = true;
@@ -534,9 +538,9 @@
             // 
             // btnUpdateSednica
             // 
-            this.btnUpdateSednica.Location = new System.Drawing.Point(865, 406);
+            this.btnUpdateSednica.Location = new System.Drawing.Point(764, 234);
             this.btnUpdateSednica.Name = "btnUpdateSednica";
-            this.btnUpdateSednica.Size = new System.Drawing.Size(122, 23);
+            this.btnUpdateSednica.Size = new System.Drawing.Size(138, 23);
             this.btnUpdateSednica.TabIndex = 52;
             this.btnUpdateSednica.Text = "Update Sednica";
             this.btnUpdateSednica.UseVisualStyleBackColor = true;
@@ -544,9 +548,9 @@
             // 
             // btnReadSednica
             // 
-            this.btnReadSednica.Location = new System.Drawing.Point(865, 435);
+            this.btnReadSednica.Location = new System.Drawing.Point(764, 263);
             this.btnReadSednica.Name = "btnReadSednica";
-            this.btnReadSednica.Size = new System.Drawing.Size(122, 23);
+            this.btnReadSednica.Size = new System.Drawing.Size(138, 23);
             this.btnReadSednica.TabIndex = 53;
             this.btnReadSednica.Text = "Read Sednica";
             this.btnReadSednica.UseVisualStyleBackColor = true;
@@ -554,9 +558,9 @@
             // 
             // btnReadRadniDaniSednice
             // 
-            this.btnReadRadniDaniSednice.Location = new System.Drawing.Point(865, 464);
+            this.btnReadRadniDaniSednice.Location = new System.Drawing.Point(764, 292);
             this.btnReadRadniDaniSednice.Name = "btnReadRadniDaniSednice";
-            this.btnReadRadniDaniSednice.Size = new System.Drawing.Size(122, 23);
+            this.btnReadRadniDaniSednice.Size = new System.Drawing.Size(138, 23);
             this.btnReadRadniDaniSednice.TabIndex = 54;
             this.btnReadRadniDaniSednice.Text = "Read Radni Dani Sednice";
             this.btnReadRadniDaniSednice.UseVisualStyleBackColor = true;
@@ -564,9 +568,9 @@
             // 
             // btnReadSazivaociVanrednaSednicaNarodnihPoslanika
             // 
-            this.btnReadSazivaociVanrednaSednicaNarodnihPoslanika.Location = new System.Drawing.Point(850, 493);
+            this.btnReadSazivaociVanrednaSednicaNarodnihPoslanika.Location = new System.Drawing.Point(763, 321);
             this.btnReadSazivaociVanrednaSednicaNarodnihPoslanika.Name = "btnReadSazivaociVanrednaSednicaNarodnihPoslanika";
-            this.btnReadSazivaociVanrednaSednicaNarodnihPoslanika.Size = new System.Drawing.Size(146, 52);
+            this.btnReadSazivaociVanrednaSednicaNarodnihPoslanika.Size = new System.Drawing.Size(140, 52);
             this.btnReadSazivaociVanrednaSednicaNarodnihPoslanika.TabIndex = 55;
             this.btnReadSazivaociVanrednaSednicaNarodnihPoslanika.Text = "Read Sazivaoci Vanredna Sednica Narodnih Poslanika";
             this.btnReadSazivaociVanrednaSednicaNarodnihPoslanika.UseVisualStyleBackColor = true;
@@ -574,9 +578,9 @@
             // 
             // btnCreateSazivaoci
             // 
-            this.btnCreateSazivaoci.Location = new System.Drawing.Point(865, 551);
+            this.btnCreateSazivaoci.Location = new System.Drawing.Point(764, 379);
             this.btnCreateSazivaoci.Name = "btnCreateSazivaoci";
-            this.btnCreateSazivaoci.Size = new System.Drawing.Size(122, 23);
+            this.btnCreateSazivaoci.Size = new System.Drawing.Size(138, 23);
             this.btnCreateSazivaoci.TabIndex = 56;
             this.btnCreateSazivaoci.Text = "Create Sazivaoci";
             this.btnCreateSazivaoci.UseVisualStyleBackColor = true;
@@ -584,9 +588,9 @@
             // 
             // btnDeleteSednica
             // 
-            this.btnDeleteSednica.Location = new System.Drawing.Point(876, 580);
+            this.btnDeleteSednica.Location = new System.Drawing.Point(765, 408);
             this.btnDeleteSednica.Name = "btnDeleteSednica";
-            this.btnDeleteSednica.Size = new System.Drawing.Size(101, 23);
+            this.btnDeleteSednica.Size = new System.Drawing.Size(137, 23);
             this.btnDeleteSednica.TabIndex = 57;
             this.btnDeleteSednica.Text = "Delete Sednica";
             this.btnDeleteSednica.UseVisualStyleBackColor = true;
@@ -594,7 +598,7 @@
             // 
             // btnReadRadniDan
             // 
-            this.btnReadRadniDan.Location = new System.Drawing.Point(1090, 377);
+            this.btnReadRadniDan.Location = new System.Drawing.Point(540, 225);
             this.btnReadRadniDan.Name = "btnReadRadniDan";
             this.btnReadRadniDan.Size = new System.Drawing.Size(108, 23);
             this.btnReadRadniDan.TabIndex = 58;
@@ -604,7 +608,7 @@
             // 
             // btnUpdateRadniDan
             // 
-            this.btnUpdateRadniDan.Location = new System.Drawing.Point(1090, 406);
+            this.btnUpdateRadniDan.Location = new System.Drawing.Point(540, 254);
             this.btnUpdateRadniDan.Name = "btnUpdateRadniDan";
             this.btnUpdateRadniDan.Size = new System.Drawing.Size(108, 23);
             this.btnUpdateRadniDan.TabIndex = 59;
@@ -614,7 +618,7 @@
             // 
             // btnDeleteRadniDan
             // 
-            this.btnDeleteRadniDan.Location = new System.Drawing.Point(1090, 435);
+            this.btnDeleteRadniDan.Location = new System.Drawing.Point(540, 283);
             this.btnDeleteRadniDan.Name = "btnDeleteRadniDan";
             this.btnDeleteRadniDan.Size = new System.Drawing.Size(108, 23);
             this.btnDeleteRadniDan.TabIndex = 60;
@@ -624,7 +628,7 @@
             // 
             // btnReadSednicaForRadniDan
             // 
-            this.btnReadSednicaForRadniDan.Location = new System.Drawing.Point(1090, 464);
+            this.btnReadSednicaForRadniDan.Location = new System.Drawing.Point(540, 312);
             this.btnReadSednicaForRadniDan.Name = "btnReadSednicaForRadniDan";
             this.btnReadSednicaForRadniDan.Size = new System.Drawing.Size(108, 37);
             this.btnReadSednicaForRadniDan.TabIndex = 61;
@@ -632,11 +636,56 @@
             this.btnReadSednicaForRadniDan.UseVisualStyleBackColor = true;
             this.btnReadSednicaForRadniDan.Click += new System.EventHandler(this.btnReadSednicaForRadniDan_Click);
             // 
+            // btnCreateJePredlozio
+            // 
+            this.btnCreateJePredlozio.Location = new System.Drawing.Point(165, 155);
+            this.btnCreateJePredlozio.Name = "btnCreateJePredlozio";
+            this.btnCreateJePredlozio.Size = new System.Drawing.Size(118, 31);
+            this.btnCreateJePredlozio.TabIndex = 62;
+            this.btnCreateJePredlozio.Text = "Create JePredlozio";
+            this.btnCreateJePredlozio.UseVisualStyleBackColor = true;
+            this.btnCreateJePredlozio.Click += new System.EventHandler(this.btnCreateJePredlozio_Click);
+            // 
+            // btnCreateJeClan
+            // 
+            this.btnCreateJeClan.Location = new System.Drawing.Point(165, 192);
+            this.btnCreateJeClan.Name = "btnCreateJeClan";
+            this.btnCreateJeClan.Size = new System.Drawing.Size(118, 36);
+            this.btnCreateJeClan.TabIndex = 63;
+            this.btnCreateJeClan.Text = "Create Je Clan";
+            this.btnCreateJeClan.UseVisualStyleBackColor = true;
+            this.btnCreateJeClan.Click += new System.EventHandler(this.btnCreateJeClan_Click);
+            // 
+            // btnJeSazvalo
+            // 
+            this.btnJeSazvalo.Location = new System.Drawing.Point(165, 279);
+            this.btnJeSazvalo.Name = "btnJeSazvalo";
+            this.btnJeSazvalo.Size = new System.Drawing.Size(118, 38);
+            this.btnJeSazvalo.TabIndex = 65;
+            this.btnJeSazvalo.Text = "Create JeSazvalo";
+            this.btnJeSazvalo.UseVisualStyleBackColor = true;
+            this.btnJeSazvalo.Click += new System.EventHandler(this.btnJeSazvalo_Click);
+            // 
+            // btnJeDodeljena
+            // 
+            this.btnJeDodeljena.Location = new System.Drawing.Point(165, 234);
+            this.btnJeDodeljena.Name = "btnJeDodeljena";
+            this.btnJeDodeljena.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnJeDodeljena.Size = new System.Drawing.Size(118, 39);
+            this.btnJeDodeljena.TabIndex = 66;
+            this.btnJeDodeljena.Text = "Create JeDodeljena";
+            this.btnJeDodeljena.UseVisualStyleBackColor = true;
+            this.btnJeDodeljena.Click += new System.EventHandler(this.btnJeDodeljena_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1233, 678);
+            this.ClientSize = new System.Drawing.Size(968, 488);
+            this.Controls.Add(this.btnJeDodeljena);
+            this.Controls.Add(this.btnJeSazvalo);
+            this.Controls.Add(this.btnCreateJeClan);
+            this.Controls.Add(this.btnCreateJePredlozio);
             this.Controls.Add(this.btnReadSednicaForRadniDan);
             this.Controls.Add(this.btnDeleteRadniDan);
             this.Controls.Add(this.btnUpdateRadniDan);
@@ -689,7 +738,7 @@
             this.Controls.Add(this.btnUpdateNarodniPoslanik);
             this.Controls.Add(this.btnCreateNarodniPoslanik);
             this.Controls.Add(this.btnReadNarodniPoslanik);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -750,6 +799,10 @@
         private System.Windows.Forms.Button btnUpdateRadniDan;
         private System.Windows.Forms.Button btnDeleteRadniDan;
         private System.Windows.Forms.Button btnReadSednicaForRadniDan;
+        private System.Windows.Forms.Button btnCreateJePredlozio;
+        private System.Windows.Forms.Button btnCreateJeClan;
+        private System.Windows.Forms.Button btnJeSazvalo;
+        private System.Windows.Forms.Button btnJeDodeljena;
     }
 }
 

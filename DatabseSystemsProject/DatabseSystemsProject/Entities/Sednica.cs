@@ -31,11 +31,11 @@ namespace DatabseSystemsProject.Entities
     public class VanrednaSednica : Sednica
     {
         public virtual string TipVanredneSednice { get; set; }
-        public virtual IList<NarodniPoslanik> Sazivaoci { get; set; }
+        public virtual IList<JeSazvalo> JeSazvaloNarodniPoslanici { get; set; }
        
         public VanrednaSednica() : base()
         {
-            Sazivaoci = new List<NarodniPoslanik>();
+            JeSazvaloNarodniPoslanici = new List<JeSazvalo>();
         }
     }
 }

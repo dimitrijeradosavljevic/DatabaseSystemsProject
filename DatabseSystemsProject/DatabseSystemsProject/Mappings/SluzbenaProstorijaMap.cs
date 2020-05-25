@@ -18,11 +18,7 @@ namespace DatabseSystemsProject.Mappings
             Map(x => x.Sprat, "SPRAT");
             Map(x => x.Broj, "BROJ");
 
-            HasManyToMany(x => x.OrganizacioneJedinice)
-                .Table("JE_DODELJENA")
-                .ParentKeyColumn("SLUZBENA_PROSTORIJA_ID")
-                .ChildKeyColumn("ORGANIZACIONA_JEDINICA_ID")
-                .Cascade.All();
+            HasMany(x => x.JeDodeljenaOrganizacionimJedinicama).KeyColumn("SLUZBENA_PROSTORIJA_ID").LazyLoad().Cascade.All().Inverse();
         }
     }
 }

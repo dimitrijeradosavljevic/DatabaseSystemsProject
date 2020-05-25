@@ -73,6 +73,10 @@
   <ItemGroup>
     <Compile Include="DataLayer.cs" />
     <Compile Include="Entities\Akt.cs" />
+    <Compile Include="Entities\JeClan.cs" />
+    <Compile Include="Entities\JeDodeljena.cs" />
+    <Compile Include="Entities\JePredlozio.cs" />
+    <Compile Include="Entities\JeSazvalo.cs" />
     <Compile Include="Entities\NarodniPoslanik.cs" />
     <Compile Include="Entities\RadniDan.cs" />
     <Compile Include="Entities\Sednica.cs" />
@@ -87,6 +91,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Mappings\AktMap.cs" />
+    <Compile Include="Mappings\JeClanMap.cs" />
+    <Compile Include="Mappings\JeDodeljenaMap.cs" />
+    <Compile Include="Mappings\JePredlozioMap.cs" />
+    <Compile Include="Mappings\JeSazvaloMap.cs" />
     <Compile Include="Mappings\NarodniPoslanikMap.cs" />
     <Compile Include="Mappings\OrganizacionaJedinicaMap.cs" />
     <Compile Include="Mappings\RadniDanMap.cs" />

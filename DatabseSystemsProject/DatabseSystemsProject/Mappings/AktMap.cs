@@ -28,12 +28,7 @@ namespace DatabseSystemsProject.Mappings
         {
             DiscriminatorValue("narodni poslanici");
 
-            HasManyToMany(x => x.Predlagaci)
-              .Table("JE_PREDLOZIO")
-              .ParentKeyColumn("AKT_ID")
-              .ChildKeyColumn("NARODNI_POSLANIK_ID")
-              .Cascade.All()
-              .Inverse();
+            HasMany(x => x.JePredlozioNarodniPoslanici).KeyColumn("AKT_ID").LazyLoad().Cascade.All().Inverse();
         }
     }
 

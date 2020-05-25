@@ -42,12 +42,7 @@ namespace DatabseSystemsProject.Mappings
             DiscriminatorValue("vanredna");
             Map(x => x.TipVanredneSednice, "TIP_VANREDNE_SEDNICE");
 
-            HasManyToMany(x => x.Sazivaoci)
-                .Table("JE_SAZVALO")
-                .ParentKeyColumn("SEDNICA_ID")
-                .ChildKeyColumn("NARODNI_POSLANIK_ID")
-                .Cascade.All()
-                .Inverse();
-        }  
+            HasMany(x => x.JeSazvaloNarodniPoslanici).KeyColumn("SEDNICA_ID").LazyLoad().Cascade.All().Inverse();
+        }
     }
 }

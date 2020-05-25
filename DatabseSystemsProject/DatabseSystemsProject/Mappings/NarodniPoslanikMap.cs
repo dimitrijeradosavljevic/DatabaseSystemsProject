@@ -28,27 +28,15 @@ namespace DatabseSystemsProject.Mappings
             Map(x => x.AdresaStanovanja, "ADRESA_STANOVANJA");
 
             HasMany(x => x.Telefoni).KeyColumn("NARODNI_POSLANIK_ID").Cascade.All().Inverse();
+
             HasMany(x => x.JePredsednik).KeyColumn("PREDSEDNIK_ID").Cascade.All().Inverse();
             HasMany(x => x.JeZamenik).KeyColumn("ZAMENIK_ID").Cascade.All().Inverse();
 
-            HasManyToMany(x => x.OrganizacioneJedinice)
-                .Table("JE_CLAN")
-                .ParentKeyColumn("NARODNI_POSLANIK_ID")
-                .ChildKeyColumn("ORGANIZACIONA_JEDINICA_ID")
-                .Cascade.All()
-                .Inverse();
+            HasMany(x => x.JeClanOrganizacionihJedinica).KeyColumn("NARODNI_POSLANIK_ID").LazyLoad().Cascade.All().Inverse();
 
-            HasManyToMany(x => x.SazvaneSednice)
-                .Table("JE_SAZVALO")
-                .ParentKeyColumn("NARODNI_POSLANIK_ID")
-                .ChildKeyColumn("SEDNICA_ID")
-                .Cascade.All();
+            HasMany(x => x.JePredlozioAkte).KeyColumn("NARODNI_POSLANIK_ID").LazyLoad().Cascade.All().Inverse();
 
-            HasManyToMany(x => x.PredlozeniAkti)
-              .Table("JE_PREDLOZIO")
-              .ParentKeyColumn("NARODNI_POSLANIK_ID")
-              .ChildKeyColumn("AKT_ID")
-              .Cascade.All();
+            HasMany(x => x.JeSazvaoSednice).KeyColumn("NARODNI_POSLANIK_ID").LazyLoad().Cascade.All().Inverse();
         }
     }
 }

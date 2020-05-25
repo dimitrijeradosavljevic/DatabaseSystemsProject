@@ -12,11 +12,11 @@ namespace DatabseSystemsProject.Entities
         public virtual int Sprat { get; set; }
         public virtual int Broj { get; set; }
 
-        public virtual IList<OrganizacionaJedinica> OrganizacioneJedinice { get; set; }
+        public virtual IList<JeDodeljena> JeDodeljenaOrganizacionimJedinicama { get; set; }
 
         public SluzbenaProstorija()
         {
-            OrganizacioneJedinice = new List<OrganizacionaJedinica>();
+            JeDodeljenaOrganizacionimJedinicama = new List<JeDodeljena>();
         }
     }
 }

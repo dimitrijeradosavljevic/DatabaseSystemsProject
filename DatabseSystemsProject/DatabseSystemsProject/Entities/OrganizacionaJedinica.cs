@@ -16,15 +16,15 @@ namespace DatabseSystemsProject.Entities
         public virtual NarodniPoslanik Predsednik { get; set; }
         public virtual NarodniPoslanik Zamenik { get; set; }
 
-        public virtual IList<NarodniPoslanik> Clanovi { get; set; }
+        public virtual IList<JeClan> JeClanNarodniPoslanici { get; set; }
 
-        public virtual IList<SluzbenaProstorija> SluzbeneProstorije { get; set; }
+        public virtual IList<JeDodeljena> JeDodeljenaSluzbeneProstorije { get; set; }
 
         public OrganizacionaJedinica()
         {
-            Clanovi = new List<NarodniPoslanik>();
+            JeClanNarodniPoslanici = new List<JeClan>();
 
-            SluzbeneProstorije = new List<SluzbenaProstorija>();
+            JeDodeljenaSluzbeneProstorije = new List<JeDodeljena>();
         }
     }
 

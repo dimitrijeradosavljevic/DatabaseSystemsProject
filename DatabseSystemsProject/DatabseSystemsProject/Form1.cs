@@ -506,19 +506,17 @@ namespace DatabseSystemsProject
             {
                 ISession session = DataLayer.GetSession();
 
-                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(31);
+                NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(75);
 
-                foreach (OrganizacionaJedinica organizacionaJedinica in narodniPoslanik.OrganizacioneJedinice)
+                foreach (JeClan jeClan in narodniPoslanik.JeClanOrganizacionihJedinica)
                 {
-                    if (organizacionaJedinica.GetType() == typeof(PoslanickaGrupa))
+                    if (jeClan.OrganizacionaJedinica.GetType() == typeof(PoslanickaGrupa))
                     {
-                        PoslanickaGrupa poslanickaGrupa = (PoslanickaGrupa)organizacionaJedinica;
-                        MessageBox.Show("Narodni poslanik " + narodniPoslanik.LicnoIme + ", je clan: " + poslanickaGrupa.Naziv);
+                        MessageBox.Show("Narodni poslanik " + narodniPoslanik.LicnoIme + ", je clan: " + jeClan.OrganizacionaJedinica.Naziv);
                     }
                     else
                     {
-                        RadnoTelo radnoTelo = (RadnoTelo)organizacionaJedinica;
-                        MessageBox.Show("Narodni poslanik " + narodniPoslanik.LicnoIme + ", je clan: " + radnoTelo.TipRadnogTela);
+                        MessageBox.Show("Narodni poslanik " + narodniPoslanik.LicnoIme + ", je clan: " + jeClan.OrganizacionaJedinica.TipRadnogTela);
                     }
                 }
             }
@@ -596,9 +594,9 @@ namespace DatabseSystemsProject
 
                 PoslanickaGrupa poslanickaGrupa = session.Load<PoslanickaGrupa>(34);
 
-                foreach (NarodniPoslanik clan in poslanickaGrupa.Clanovi)
+                foreach (JeClan jeClan in poslanickaGrupa.JeClanNarodniPoslanici)
                 {
-                    MessageBox.Show("Narodni poslanik " + clan.LicnoIme + ", je clan: " + poslanickaGrupa.Naziv);
+                    MessageBox.Show("Narodni poslanik " + jeClan.NarodniPoslanik.LicnoIme + ", je clan: " + poslanickaGrupa.Naziv);
                 }
 
                 session.Close();
@@ -617,9 +615,9 @@ namespace DatabseSystemsProject
 
                 RadnoTelo radnoTelo = session.Load<RadnoTelo>(35);
 
-                foreach (NarodniPoslanik clan in radnoTelo.Clanovi)
+                foreach (JeClan jeClan in radnoTelo.JeClanNarodniPoslanici)
                 {
-                    MessageBox.Show("Narodni poslanik " + clan.LicnoIme + ", je clan: " + radnoTelo.TipRadnogTela);
+                    MessageBox.Show("Narodni poslanik " + jeClan.NarodniPoslanik.LicnoIme + ", je clan: " + radnoTelo.TipRadnogTela);
                 }
 
                 session.Close();
@@ -741,15 +739,15 @@ namespace DatabseSystemsProject
                 NarodniPoslanik np2 = session.Load<NarodniPoslanik>(32);
                 NarodniPoslanik np3 = session.Load<NarodniPoslanik>(33);
 
-                np1.PredlozeniAkti.Add(anp);
+                //np1.PredlozeniAkti.Add(anp);
 
-                np2.PredlozeniAkti.Add(anp);
+                //np2.PredlozeniAkti.Add(anp);
 
-                np3.PredlozeniAkti.Add(anp);
+                //np3.PredlozeniAkti.Add(anp);
 
-                anp.Predlagaci.Add(np1);
-                anp.Predlagaci.Add(np2);
-                anp.Predlagaci.Add(np3);
+                //anp.Predlagaci.Add(np1);
+                //anp.Predlagaci.Add(np2);
+                //anp.Predlagaci.Add(np3);
 
                 session.Save(anp);
                 session.Save(avl);
@@ -772,10 +770,10 @@ namespace DatabseSystemsProject
 
                 PoslanickaGrupa poslanickaGrupa = session.Load<PoslanickaGrupa>(34);
 
-                foreach (SluzbenaProstorija sluzbenaProstorija in poslanickaGrupa.SluzbeneProstorije)
+                foreach (JeDodeljena jeDodeljena in poslanickaGrupa.JeDodeljenaSluzbeneProstorije)
                 {
                     MessageBox.Show("Naziv: " + poslanickaGrupa.Naziv
-                        + ", sluzbena prostorija (sprat, broj): ( " + sluzbenaProstorija.Sprat + ", " + sluzbenaProstorija.Broj + ")");
+                        + ", sluzbena prostorija (sprat, broj): ( " + jeDodeljena.SluzbenaProstorija.Sprat + ", " + jeDodeljena.SluzbenaProstorija.Broj + ")");
                 }
 
                 session.Close();
@@ -794,11 +792,11 @@ namespace DatabseSystemsProject
 
                 RadnoTelo radnoTelo = session.Load<RadnoTelo>(37);
 
-                if (radnoTelo.SluzbeneProstorije.Count() > 0)
+                if (radnoTelo.JeDodeljenaSluzbeneProstorije.Count() > 0)
                 {
                     MessageBox.Show("Tip radnog tela: " + radnoTelo.TipRadnogTela
                         + ", sluzbena prostorija (sprat, broj): " +
-                        "( " + radnoTelo.SluzbeneProstorije[0].Sprat + ", " + radnoTelo.SluzbeneProstorije[0].Broj + ")");
+                        "( " + radnoTelo.JeDodeljenaSluzbeneProstorije[0].SluzbenaProstorija.Sprat + ", " + radnoTelo.JeDodeljenaSluzbeneProstorije[0].SluzbenaProstorija.Broj + ")");
                 }
 
                 session.Close();
@@ -817,19 +815,17 @@ namespace DatabseSystemsProject
 
                 SluzbenaProstorija sluzbenaProstorija = session.Load<SluzbenaProstorija>(31);
 
-                foreach (OrganizacionaJedinica orgJedinica in sluzbenaProstorija.OrganizacioneJedinice)
+                foreach (JeDodeljena jeDodeljena in sluzbenaProstorija.JeDodeljenaOrganizacionimJedinicama)
                 {
                     // MessageBox.Show(orgJedinica.Id.ToString());
 
-                    if (orgJedinica.GetType() == typeof(PoslanickaGrupa))
+                    if (jeDodeljena.OrganizacionaJedinica.GetType() == typeof(PoslanickaGrupa))
                     {
-                        PoslanickaGrupa pGr = (PoslanickaGrupa)orgJedinica;
-                        MessageBox.Show(orgJedinica.Id.ToString() + ", " + pGr.Naziv);
+                        MessageBox.Show(jeDodeljena.OrganizacionaJedinica.Id.ToString() + ", " + jeDodeljena.OrganizacionaJedinica.Naziv);
                     }
-                    else if (orgJedinica.GetType() == typeof(RadnoTelo))
+                    else if (jeDodeljena.OrganizacionaJedinica.GetType() == typeof(RadnoTelo))
                     {
-                        RadnoTelo rTe = (RadnoTelo)orgJedinica;
-                        MessageBox.Show(orgJedinica.Id.ToString() + ", " + rTe.TipRadnogTela);
+                        MessageBox.Show(jeDodeljena.OrganizacionaJedinica.Id.ToString() + ", " + jeDodeljena.OrganizacionaJedinica.TipRadnogTela);
                     }
                 }
 
@@ -944,9 +940,9 @@ namespace DatabseSystemsProject
 
                 string tekst = "";
 
-                foreach (var poslanik in akt.Predlagaci)
+                foreach (JePredlozio jePredlozio in akt.JePredlozioNarodniPoslanici)
                 {
-                    tekst += poslanik.Id + ", " + poslanik.LicnoIme + " " + poslanik.Prezime + " \n";
+                    tekst += jePredlozio.NarodniPoslanik.Id + ", " + jePredlozio.NarodniPoslanik.LicnoIme + " " + jePredlozio.NarodniPoslanik.Prezime + " \n";
                 }
 
                 MessageBox.Show(tekst);
@@ -967,9 +963,9 @@ namespace DatabseSystemsProject
 
                 NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(40);
 
-                foreach (Sednica sednica in narodniPoslanik.SazvaneSednice)
+                foreach (JeSazvalo jeSazvalo in narodniPoslanik.JeSazvaoSednice)
                 {
-                    MessageBox.Show("Ime: " + narodniPoslanik.LicnoIme + ", broj saziva sednice" + sednica.BrojSaziva);
+                    MessageBox.Show("Ime: " + narodniPoslanik.LicnoIme + ", broj saziva sednice" + jeSazvalo.Sednica.BrojSaziva);
                 }
 
                 session.Close();
@@ -988,9 +984,9 @@ namespace DatabseSystemsProject
 
                 NarodniPoslanik narodniPoslanik = session.Load<NarodniPoslanik>(40);
 
-                foreach (Akt akt in narodniPoslanik.PredlozeniAkti)
+                foreach (JePredlozio jePredlozio in narodniPoslanik.JePredlozioAkte)
                 {
-                    MessageBox.Show("Ime: " + narodniPoslanik.LicnoIme + ", akt: " + akt.TipAkta + ", " + akt.TipPredlozioca);
+                    MessageBox.Show("Ime: " + narodniPoslanik.LicnoIme + ", akt: " + jePredlozio.Akt.TipAkta + ", " + jePredlozio.Akt.TipPredlozioca);
                 }
 
                 session.Close();
@@ -1159,9 +1155,9 @@ namespace DatabseSystemsProject
 
                 string prikaz = "Sazivaoci: ";
 
-                foreach (var poslanik in vs.Sazivaoci)
+                foreach (JeSazvalo jeSazvalo in vs.JeSazvaloNarodniPoslanici)
                 {
-                    prikaz += "\n" + poslanik.LicnoIme + " " + poslanik.ImeRoditelja + " " + poslanik.Prezime;
+                    prikaz += "\n" + jeSazvalo.NarodniPoslanik.LicnoIme + " " + jeSazvalo.NarodniPoslanik.ImeRoditelja + " " + jeSazvalo.NarodniPoslanik.Prezime;
                 }
 
                 MessageBox.Show(prikaz);

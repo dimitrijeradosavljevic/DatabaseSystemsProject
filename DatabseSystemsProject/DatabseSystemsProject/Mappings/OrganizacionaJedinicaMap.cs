@@ -24,18 +24,9 @@ namespace DatabseSystemsProject.Mappings
             References(x => x.Predsednik).Column("PREDSEDNIK_ID").LazyLoad();
             References(x => x.Zamenik).Column("ZAMENIK_ID").LazyLoad();
 
-            HasManyToMany(x => x.Clanovi)
-                .Table("JE_CLAN")
-                .ParentKeyColumn("ORGANIZACIONA_JEDINICA_ID")
-                .ChildKeyColumn("NARODNI_POSLANIK_ID")
-                .Cascade.All();
+            HasMany(x => x.JeClanNarodniPoslanici).KeyColumn("ORGANIZACIONA_JEDINICA_ID").LazyLoad().Cascade.All().Inverse();
 
-            HasManyToMany(x => x.SluzbeneProstorije)
-                .Table("JE_DODELJENA")
-                .ParentKeyColumn("ORGANIZACIONA_JEDINICA_ID")
-                .ChildKeyColumn("SLUZBENA_PROSTORIJA_ID")
-                .Cascade.All()
-                .Inverse();
+            HasMany(x => x.JeDodeljenaSluzbeneProstorije).KeyColumn("ORGANIZACIONA_JEDINICA_ID").LazyLoad().Cascade.All().Inverse();
         }
     }
 

@@ -20,11 +20,11 @@ namespace DatabseSystemsProject.Entities
 
     public class AktNarodnihPoslanika : Akt
     {
-        public virtual IList<NarodniPoslanik> Predlagaci { get; set; }
+        public virtual IList<JePredlozio> JePredlozioNarodniPoslanici { get; set; }
 
         public AktNarodnihPoslanika() : base()
         {
-            Predlagaci = new List<NarodniPoslanik>();
+            JePredlozioNarodniPoslanici = new List<JePredlozio>();
         }
     }
 
